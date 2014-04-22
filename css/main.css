@@ -1,0 +1,391 @@
+@font-face {
+	font-family:'pt_serif_captionregular';
+	src:url("../fonts/PTZ55F-webfont.eot");
+	src:url("../fonts/PTZ55F-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/PTZ55F-webfont.woff") format("woff"), url("../fonts/PTZ55F-webfont.ttf") format("truetype"), url("../fonts/PTZ55F-webfont.svg#pt_serif_captionregular") format("svg");
+	font-weight:normal;
+	font-style:normal
+}
+
+
+html {
+	font-size:62.5%
+}
+body {
+	background:#181818;
+	font-family:'pt_serif_captionregular', Georgia, serif;
+	font-size:16px;
+	font-size:1.6rem;
+	color:#645e54
+}
+
+#mainContainer {
+	overflow:hidden;
+	/*float:left;*/
+}
+
+#skills .output .value {
+	width:2em;
+	float:right;
+	display:block;
+	text-align:left;
+	text-indent:4px
+}
+
+.class-switcher {
+	float:left;
+	width:200px;
+	background:#7d2d2e;
+	font-size:18px;
+	font-size:1.8rem;
+	margin-right:15px;
+}
+.class-switcher ul,
+.class-switcher li {
+	list-style:none;
+	margin:0;
+	padding:0
+}
+.class-switcher ul {
+	margin:20px 0;
+}
+.class-switcher li {
+	color:#ffd1d1;
+	padding:5px 0 5px 25px;
+	cursor:pointer
+}
+.class-switcher li + li {
+	margin-top:3px;
+}
+.class-switcher li.active {
+	position:relative;
+	/*text-decoration:underline;*/
+
+	background:#7d2d2e;
+	background:-moz-linear-gradient(left, rgba(125,45,46,0) 50%, rgba(125,45,46,1) 100%),
+	           -moz-linear-gradient(top, #7d2d2e 0%, #531e1f 100%);
+	background:-webkit-gradient(linear, left top, right top, color-stop(50%,rgba(125,45,46,0)), color-stop(100%,rgba(125,45,46,1))),
+	           -webkit-gradient(linear, left top, left bottom, color-stop(0%,#7d2d2e), color-stop(100%,#531e1f));
+	background:-webkit-linear-gradient(left, rgba(125,45,46,0) 50%,rgba(125,45,46,1) 100%),
+	           -webkit-linear-gradient(top, #7d2d2e 0%,#531e1f 100%);
+	background:-o-linear-gradient(left, rgba(125,45,46,0) 50%,rgba(125,45,46,1) 100%),
+	           -o-linear-gradient(top, #7d2d2e 0%,#531e1f 100%);
+	background:-ms-linear-gradient(left, rgba(125,45,46,0) 50%,rgba(125,45,46,1) 100%),
+	           -ms-linear-gradient(top, #7d2d2e 0%,#531e1f 100%);
+	background:linear-gradient(to right, rgba(125,45,46,0) 50%,rgba(125,45,46,1) 100%),
+	           linear-gradient(to bottom, #7d2d2e 0%,#531e1f 100%);
+	box-shadow:-5px 0 7px #531e1f;
+}
+.class-switcher li.active:after {
+	left:100%;
+	top:50%;
+	border:solid transparent;
+	content:" ";
+	height:0;
+	width:0;
+	position:absolute;
+	pointer-events:none;
+	border-color:rgba(125, 45, 46, 0);
+	border-left-color:#7d2d2e;
+	border-width:10px;
+	margin-top:-10px
+}
+
+.class-switcher li:hover {
+	background:#531e1f
+}
+.class-switcher li.active:hover:after {
+	border-color:rgba(125, 45, 46, 0);
+	border-left-color:#531e1f
+}
+.trees-wrapper {
+	float:left
+}
+
+.counter-wrapper {
+	float:left
+}
+.remaining-skills,
+.required-level {
+	margin-bottom:5px
+}
+
+.remaining-skills span,
+.required-level span {
+	display:inline-block;
+	width:30px;
+	margin-right:5px;
+
+	background:#fff;
+	color:#000;
+	padding:5px;
+	text-align:center;
+	font-family:Arial,sans-serif;
+	font-weight:700
+}
+
+
+.tree {
+	float:left;
+	clear:both;
+	display:none
+}
+.tree.active {
+	display:block
+}
+.tree .tab {
+	float:left;
+	height:515px;
+	width:180px;
+	background:#141414;
+	padding:10px;
+	margin-right:10px;
+	margin-bottom:25px;
+	border:2px solid #555;
+	position:relative
+}
+.tree .tab > div {
+	width:48px;
+	height:48px;
+	margin:5px;
+	display:block;
+	position:absolute;
+	cursor:pointer;
+	background-repeat:no-repeat
+}
+
+
+/* AMAZON */
+.tree #jav {
+	background:url(../img/zon_bg.gif) -1px 0 no-repeat
+}
+.tree #jav > div {
+	background-image:url(../img/zon_jav.jpg)
+}
+.tree #passive {
+	background:url(../img/zon_bg.gif) -214px 0 no-repeat
+}
+.tree #passive > div {
+	background-image:url(../img/zon_passive.jpg)
+}
+.tree #bow {
+	background:url(../img/zon_bg.gif) -430px 0 no-repeat
+}
+.tree #bow > div {
+	background-image:url(../img/zon_bow.jpg)
+}
+
+/* ASSASSIN */
+.tree #ma {
+	background:url(../img/sin_bg.gif) -1px 0 no-repeat
+}
+.tree #ma > div {
+	background-image:url(../img/sin_ma.jpg)
+}
+.tree #shadow {
+	background:url(../img/sin_bg.gif) -214px 0 no-repeat
+}
+.tree #shadow > div {
+	background-image:url(../img/sin_shadow.jpg)
+}
+.tree #traps {
+	background:url(../img/sin_bg.gif) -430px 0 no-repeat
+}
+.tree #traps > div {
+	background-image:url(../img/sin_traps.jpg)
+}
+
+/* BARBARIAN */
+.tree #warcries {
+	background:url(../img/barb_bg.gif) -1px 0 no-repeat
+}
+.tree #warcries > div {
+	background-image:url(../img/barb_warcries.jpg)
+}
+.tree #masteries {
+	background:url(../img/barb_bg.gif) -214px 0 no-repeat
+}
+.tree #masteries > div {
+	background-image:url(../img/barb_masteries.jpg)
+}
+.tree #bcombat {
+	background:url(../img/barb_bg.gif) -430px 0 no-repeat
+}
+.tree #bcombat > div {
+	background-image:url(../img/barb_combat.jpg)
+}
+
+/* DRUID */
+.tree #ele {
+	background:url(../img/druid_bg.gif) -1px 0 no-repeat
+}
+.tree #ele > div {
+	background-image:url(../img/druid_ele.jpg)
+}
+.tree #ss {
+	background:url(../img/druid_bg.gif) -214px 0 no-repeat
+}
+.tree #ss > div {
+	background-image:url(../img/druid_ss.jpg)
+}
+.tree #dsummon {
+	background:url(../img/druid_bg.gif) -430px 0 no-repeat
+}
+.tree #dsummon > div {
+	background-image:url(../img/druid_summon.jpg)
+}
+
+/* PALADIN */
+.tree #defensive {
+	background:url(../img/pally_bg.gif) -1px 0 no-repeat
+}
+.tree #defensive > div {
+	background-image:url(../img/pally_def.jpg)
+}
+.tree #offensive {
+	background:url(../img/pally_bg.gif) -214px 0 no-repeat
+}
+.tree #offensive > div {
+	background-image:url(../img/pally_off.jpg)
+}
+.tree #pcombat {
+	background:url(../img/pally_bg.gif) -430px 0 no-repeat
+}
+.tree #pcombat > div {
+	background-image:url(../img/pally_combat.jpg)
+}
+
+/* NECRO */
+.tree #nsummon {
+	background:url(../img/necro_bg.gif) -1px 0 no-repeat
+}
+.tree #nsummon > div {
+	background-image:url(../img/necro_summon.jpg)
+}
+.tree #bnp {
+	background:url(../img/necro_bg.gif) -214px 0 no-repeat
+}
+.tree #bnp > div {
+	background-image:url(../img/necro_bnp.jpg)
+}
+.tree #curses {
+	background:url(../img/necro_bg.gif) -430px 0 no-repeat
+}
+.tree #curses > div {
+	background-image:url(../img/necro_curses.jpg)
+}
+
+/* SORC */
+.tree #cold {
+	background:url(../img/sorc_bg.gif) -1px 0 no-repeat
+}
+.tree #cold > div {
+	background-image:url(../img/sorc_cold.jpg)
+}
+.tree #lite {
+	background:url(../img/sorc_bg.gif) -214px 0 no-repeat
+}
+.tree #lite > div {
+	background-image:url(../img/sorc_lite.jpg)
+}
+.tree #fire {
+	background:url(../img/sorc_bg.gif) -430px 0 no-repeat
+}
+.tree #fire > div {
+	background-image:url(../img/sorc_fire.jpg);
+	background-repeat:no-repeat
+}
+
+
+.tree .tab .r1.c1 {
+	background-position:0 0
+}
+.tree .tab .r1.c2 {
+	background-position:-48px 0
+}
+.tree .tab .r1.c3 {
+	background-position:-96px 0
+}
+.tree .tab .r2.c1 {
+	background-position:0 -48px
+}
+.tree .tab .r2.c2 {
+	background-position:-48px -48px
+}
+.tree .tab .r2.c3 {
+	background-position:-96px -48px
+}
+.tree .tab .r3.c1 {
+	background-position:0 -96px
+}
+.tree .tab .r3.c2 {
+	background-position:-48px -96px
+}
+.tree .tab .r3.c3 {
+	background-position:-96px -96px
+}
+.tree .tab .r4.c1 {
+	background-position:0 -144px
+}
+.tree .tab .r4.c2 {
+	background-position:-48px -144px
+}
+.tree .tab .r4.c3 {
+	background-position:-96px -144px
+}
+.tree .tab .r5.c1 {
+	background-position:0 -192px
+}
+.tree .tab .r5.c2 {
+	background-position:-48px -192px
+}
+.tree .tab .r5.c3 {
+	background-position:-96px -192px
+}
+.tree .tab .r6.c1 {
+	background-position:0 -240px
+}
+.tree .tab .r6.c2 {
+	background-position:-48px -240px
+}
+.tree .tab .r6.c3 {
+	background-position:-96px -240px
+}
+.tree .tab .r1 {
+	top:0
+}
+.tree .tab .r2 {
+	top:90px
+}
+.tree .tab .r3 {
+	top:180px
+}
+.tree .tab .r4 {
+	top:270px
+}
+.tree .tab .r5 {
+	top:360px
+}
+.tree .tab .r6 {
+	top:450px
+}
+.tree .tab .c1 {
+	left:0
+}
+.tree .tab .c2 {
+	left:70px
+}
+.tree .tab .c3 {
+	left:140px
+}
+.tree .tab > div .lvl {
+	height:24px;
+	line-height:24px;
+	display:block;
+	background:#333;
+	color:#fff;
+	margin-top:50px;
+	text-align:center;
+	font-family:Arial,sans-serif;
+	font-weight:700;
+	letter-spacing:1px
+}
