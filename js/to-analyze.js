@@ -662,6 +662,7 @@ var MopTalentCalc = function (I) {
 		}
 	}
 
+	//here
 	function i() {
 		var aE = "";
 		if (!T) {
