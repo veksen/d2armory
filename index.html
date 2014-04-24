@@ -777,87 +777,16 @@
 <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> -->
 <script src="js/jquery-1.11.0.min.js"></script>
 <script src="js/jquery-migrate-1.2.1.min.js"></script>
+<script src="js/jquery.deserialize.js"></script>
 <script src="js/script.js"></script>
 <script src="js/jquery.history.js"></script>
-<!-- <script src="js/jquery.address-1.5.js"></script> -->
-<script>
-	// $(function() {
-
-	// 	var init = true,
-	// 		state = window.history.pushState !== undefined;
-
-	// 	// Handles response
-	// 	var handler = function(data) {
-	// 		$('title').html($('title', data).html());
-	// 		$('.content').html($('.content', data).html());
-	// 		$('.page').show();
-	// 		$.address.title(/>([^<]*)<\/title/.exec(data)[1]);
-	// 	};
-
-	// 	$.address.state('/jquery/address/samples/state').init(function() {
-
-	// 		// Initializes the plugin
-	// 		$('.nav a').address();
-			
-	// 	}).change(function(event) {
-
-	// 		// Selects the proper navigation link
-	// 		$('.nav a').each(function() {
-	// 			if ($(this).attr('href') == ($.address.state() + event.path)) {
-	// 				$(this).addClass('selected').focus();
-	// 			} else {
-	// 				$(this).removeClass('selected');
-	// 			}
-	// 		});
-			
-	// 		if (state && init) {
-			
-	// 			init = false;
-			
-	// 		} else {
-			
-	// 			// Loads the page content and inserts it into the content area
-	// 			$.ajax({
-	// 				url: $.address.state() + event.path,
-	// 				error: function(XMLHttpRequest, textStatus, errorThrown) {
-	// 					handler(XMLHttpRequest.responseText);
-	// 				},
-	// 				success: function(data, textStatus, XMLHttpRequest) {
-	// 					handler(data);
-	// 				}
-	// 			});
-	// 		}
-
-	// 	});
-
-	// 	if (!state) {
-
-	// 		// Hides the page during initialization
-	// 		document.write('<style type="text/css"> .page { display: none; } </style>');
-	// 	}
-
-	// });
-</script>
 <script>
 (function(window,undefined){
 
-    // Bind to StateChange Event
-    History.Adapter.bind(window,'statechange',function(){ // Note: We are using statechange instead of popstate
-        var State = History.getState(); // Note: We are using History.getState() instead of event.state
-    });
-
-
-    // History.replaceState({state:3}, "State 3", "?state=3"); // logs {state:3}, "State 3", "?state=3"
-
-    // // Change our States
-    // History.pushState({state:1}, "State 1", "?state=1"); // logs {state:1}, "State 1", "?state=1"
-    // History.pushState({state:2}, "State 2", "?state=2"); // logs {state:2}, "State 2", "?state=2"
-    // History.replaceState({state:3}, "State 3", "?state=3"); // logs {state:3}, "State 3", "?state=3"
-    // History.pushState(null, null, "?state=4"); // logs {}, '', "?state=4"
-    // History.back(); // logs {state:3}, "State 3", "?state=3"
-    // History.back(); // logs {state:1}, "State 1", "?state=1"
-    // History.back(); // logs {}, "Home Page", "?"
-    // History.go(2); // logs {state:3}, "State 3", "?state=3"
+	// Bind to StateChange Event
+	History.Adapter.bind(window,'statechange',function(){ // Note: We are using statechange instead of popstate
+		var State = History.getState(); // Note: We are using History.getState() instead of event.state
+	});
 
 })(window);
 </script>
