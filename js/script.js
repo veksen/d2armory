@@ -858,6 +858,14 @@ function switchTab()
 	dclass = $this.attr('data-class');
 	$('.'+dclass).show().siblings().hide();
 	$this.addClass('active').siblings().removeClass('active');
+	buildState(dclass);
+}
+
+function buildState(_class, tree1, tree2, tree3)
+{
+	thestate = _class;
+
+	History.replaceState({state:thestate}, "Class 3", "?class="+thestate); // logs {state:3}, 
 }
 
 
