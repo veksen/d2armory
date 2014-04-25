@@ -861,20 +861,60 @@ function switchTab()
 	buildState(dclass);
 }
 
-function buildState(_class, tree1, tree2, tree3)
+function buildState(_class)
 {
-	thestate = _class;
+	var tree = [];
+	$('#'+_class+' .tab').each(function(i) {
+		var tree_str = '';
+		for(i = 1; i <= 10; i++)
+		{
+			val = $(this).data('skill'+zeroPad(i, 2));
+			tree_str += (!val ? zeroPad(0, 2) : val);
+		}
+		console.log(tree_str);
+	});
 
-	History.replaceState({state:thestate}, "Class 3", "?class="+thestate); // logs {state:3}, 
+	var thestate = _class+'&t1='+tree[0]+'&t2='+tree[1]+'&t3='+tree[2];
+	History.replaceState(
+		{ state:thestate },
+		"Diablo 2 Skill Tree - "+humanReadable(_class),
+		"?class="+thestate
+	);
 }
 
+function humanReadable(myvar)
+{
+	switch(myvar) {
+		case 'zon': return 'Amazon'; break;
+		case 'sin': return 'Assassin'; break;
+		case 'bar': return 'Barbarian'; break;
+		case 'dru': return 'Druid'; break;
+		case 'nec': return 'Necromancer'; break;
+		case 'pal': return 'Paladin'; break;
+		case 'sor': return 'Sorceress'; break;
+	}
+}
+
+function zeroPad(num, places) {
+	var zero = places - num.toString().length + 1;
+	return Array(+(zero > 0 && zero)).join("0") + num;
+}
+
+function onSkillUpdate(elem, val)
+{
+	$this = $(elem);
+	$tab = $this.closest('.tab');
+	$tree = $this.closest('.tree');
+	i = $this.index()+1;
+	$tab.data('skill'+zeroPad(i, 2), zeroPad(val, 2));
+
+	buildState($tree.attr('id'));
+}
 
 $(function () {
-	bnp_str = '';
-	for(var k in skill.bnp) {
-		var o = skill.bnp[k].base;
-		bnp_str += bnp_str.concat(o);
-	}
+
+	State = History.getState();
+	console.log(State.data.state);
 
 	$('.tree > .tab').bind("contextmenu", function (e) {
 		e.preventDefault();
@@ -891,6 +931,7 @@ $(function () {
 				skill[$tab][$skill]['base'] += 1;
 				updateRemaining($this, -1);
 				updateLevelRequired($this, 1);
+				onSkillUpdate($this, skill[$tab][$skill]['base']);
 			}
 		} else if (e.which == 3) {
 			//rightclick
@@ -898,6 +939,7 @@ $(function () {
 				skill[$tab][$skill]['base'] -= 1;
 				updateRemaining($this, 1);
 				updateLevelRequired($this, -1);
+				onSkillUpdate($this, skill[$tab][$skill]['base']);
 			}
 		}
 		$this.find(".lvl").text(skill[$tab][$skill]['base']);
