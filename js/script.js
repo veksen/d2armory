@@ -868,8 +868,6 @@ function hasRemaining(elem, op)
 	rem = elem.closest('.tab').siblings('.counter-wrapper').find('.rem');
 	current = rem.text();
 	result = parseInt(current)+parseInt(op);
-	console.log(result);
-	console.log(result > 1);
 	if(result > 1) {
 		return true;
 	}
@@ -897,15 +895,11 @@ function countLvl(c)
 {
 	getState().c;
 
-	console.log(getState().c);
-
 	var count = 0;
 	$('#'+c).find('.lvl').each(function() {
 		var lvl = $(this).html();
 		count += parseInt(lvl);
 	});
-	
-	console.log(count);
 
 	$('#'+c).find('.remaining-skills span').text(charlvl+skillquests-count-1);
 	$('#'+c).find('.required-level span').text(count);
@@ -1057,7 +1051,6 @@ $(function () {
 			else {
 				op = 1;
 			}
-			// console.log(hasRemaining($this, op));
 			if (skill[$tab][$skill]['base'] < basemax && checkPreReq($skill, $tab) && hasRemaining($this, op)) {
 				if(getLvlReq($this) > charlvl) return false;
 				skill[$tab][$skill]['base'] += op;
