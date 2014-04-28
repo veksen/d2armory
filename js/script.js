@@ -1,3 +1,42 @@
+var JSON = JSON || {};
+
+// implement JSON.stringify serialization
+JSON.stringify = JSON.stringify || function (obj) {
+
+	var t = typeof (obj);
+	if (t != "object" || obj === null) {
+
+		// simple data type
+		if (t == "string") obj = '"'+obj+'"';
+		return String(obj);
+
+	}
+	else {
+
+		// recurse array or object
+		var n, v, json = [], arr = (obj && obj.constructor == Array);
+
+		for (n in obj) {
+			v = obj[n]; t = typeof(v);
+
+			if (t == "string") v = '"'+v+'"';
+			else if (t == "object" && v !== null) v = JSON.stringify(v);
+
+			json.push((arr ? "" : '"' + n + '":') + String(v));
+		}
+
+		return (arr ? "[" : "{") + String(json) + (arr ? "]" : "}");
+	}
+};
+
+
+// implement JSON.parse de-serialization
+JSON.parse = JSON.parse || function (str) {
+	if (str === "") str = '""';
+	eval("var p=" + str + ";");
+	return p;
+};
+
 var charlvl = 99;
 var skillquests = 12;
 var basemin = 0;
@@ -852,33 +891,102 @@ function getLvlReq(elem)
 	return req;
 }
 
-function switchTab()
+function switchTab(c)
 {
-	$this = $(this);
-	dclass = $this.attr('data-class');
-	$('.'+dclass).show().siblings().hide();
+	if(c.type == 'click') {
+		$this = $(this);
+		c = $this.attr('data-class');
+	}
+	else {
+		$this = $('.class-switcher').find("[data-class='"+c+"']");
+	}
+	$('.'+c).show().siblings().hide();
 	$this.addClass('active').siblings().removeClass('active');
-	buildState(dclass);
 }
 
-function buildState(_class)
+function buildState(c)
 {
 	var tree = [];
-	$('#'+_class+' .tab').each(function(i) {
+	var tab = 0;
+	$('#'+c+' .tab').each(function(tab) {
 		var tree_str = '';
 		for(i = 1; i <= 10; i++)
 		{
 			val = $(this).data('skill'+zeroPad(i, 2));
 			tree_str += (!val ? zeroPad(0, 2) : val);
 		}
-		console.log(tree_str);
+		tree[tab] = tree_str;
+		tab++;
 	});
 
-	var thestate = _class+'&t1='+tree[0]+'&t2='+tree[1]+'&t3='+tree[2];
+	var state = 'c='+c+'&t1='+tree[0]+'&t2='+tree[1]+'&t3='+tree[2];
+	return state;
+}
+
+function QueryStringToJSON()
+{
+	var pairs = location.search.slice(1).split('&');
+
+	var result = {};
+	pairs.forEach(function(pair) {
+		pair = pair.split('=');
+		result[pair[0]] = decodeURIComponent(pair[1] || '');
+	});
+
+	return JSON.parse(JSON.stringify(result));
+}
+
+function getState()
+{
+	var State = QueryStringToJSON();
+
+	return State;
+}
+
+function applyState()
+{
+	if(History.getState().hash != '/') {
+		state = [];
+		state.c  = getState().c;
+		state.t1 = getState().t1;
+		state.t2 = getState().t2;
+		state.t3 = getState().t3;
+
+		switchTab(state['c']);
+
+		for(var i = 1, state; i <= 3; i++)
+		{
+			var curtab = $("#"+state['c']).find('.tab').eq(i-1).attr('id');
+
+			var tree = state['t'+i];
+			split_tree = tree.match(/.{1,2}/g);
+
+			$tree = $("#"+state['c']).find('.tab').eq(i-1);
+
+			for(var ii = 1; ii <= 10; ii++)
+			{
+				$tree.data('skill'+zeroPad(ii, 2), split_tree[ii-1]);
+				$tree.find('div').find('.lvl').eq(ii-1).each(function() {
+					$(this).text(parseInt(split_tree[ii-1]));
+				});
+				var curskill = $tree.find('div').eq(ii-1).attr('id');
+				skill[curtab][curskill]['base'] = parseInt(split_tree[ii-1]);
+			}
+		}
+
+		setState(state.c);
+	}
+}
+
+function setState(c)
+{
+	state = buildState(c);
+	console.log(state);
+
 	History.replaceState(
-		{ state:thestate },
-		"Diablo 2 Skill Tree - "+humanReadable(_class),
-		"?class="+thestate
+		{ state:state },
+		"Diablo 2 Skill Tree - "+humanReadable(c),
+		"?"+state
 	);
 }
 
@@ -908,14 +1016,10 @@ function onSkillUpdate(elem, val)
 	i = $this.index()+1;
 	$tab.data('skill'+zeroPad(i, 2), zeroPad(val, 2));
 
-	buildState($tree.attr('id'));
+	setState($tree.attr('id'));
 }
 
 $(function () {
-
-	State = History.getState();
-	console.log(State.data.state);
-
 	$('.tree > .tab').bind("contextmenu", function (e) {
 		e.preventDefault();
 	});
@@ -948,4 +1052,6 @@ $(function () {
 	$('.class-switcher li').on('click', switchTab);
 
 	$('.remaining-skills .rem').text(charlvl+skillquests-1);
+
+	applyState();
 });
