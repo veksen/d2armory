@@ -999,7 +999,6 @@ function applyState()
 function setState(c)
 {
 	state = buildState(c);
-	console.log(state);
 
 	History.replaceState(
 		{ state:state },
@@ -1057,7 +1056,8 @@ $(function () {
 			}
 		} else if (e.which == 3) {
 			//rightclick
-			if (skill[$tab][$skill]['base'] > basemin && checkPreReqOf($skill, $tab)) {
+			if ((checkPreReqOf($skill, $tab) || skill[$tab][$skill]['base'] > basemin+1) &&
+				skill[$tab][$skill]['base'] > basemin) {
 				skill[$tab][$skill]['base'] -= 1;
 				updateRemaining($this, 1);
 				updateLevelRequired($this, -1);
