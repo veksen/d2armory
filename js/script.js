@@ -891,6 +891,26 @@ function getLvlReq(elem)
 	return req;
 }
 
+function countLvl(c)
+{
+	getState().c;
+
+	console.log(getState().c);
+
+	var count = 0;
+	$('#'+c).find('.lvl').each(function() {
+		var lvl = $(this).html();
+		// console.log(lvl);
+		count += parseInt(lvl);
+		// console.log($(this).html());
+	});
+	
+	console.log(count);
+
+	$('#'+c).find('.remaining-skills span').text(charlvl+skillquests-count-1);
+	$('#'+c).find('.required-level span').text(count);
+}
+
 function switchTab(c)
 {
 	if(c.type == 'click') {
@@ -975,6 +995,7 @@ function applyState()
 		}
 
 		setState(state.c);
+		countLvl(state.c);
 	}
 }
 
