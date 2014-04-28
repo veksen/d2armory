@@ -863,11 +863,14 @@ function updateLevelRequired(elem, operation)
 	current = req.text();
 	req.text(parseInt(current)+operation);
 }
-function hasRemaining(elem)
+function hasRemaining(elem, op)
 {
 	rem = elem.closest('.tab').siblings('.counter-wrapper').find('.rem');
 	current = rem.text();
-	if(current > 0) {
+	result = parseInt(current)+parseInt(op);
+	console.log(result);
+	console.log(result > 1);
+	if(result > 1) {
 		return true;
 	}
 	else {
@@ -1047,11 +1050,19 @@ $(function () {
 		var $skill = $this.attr("id");
 		if (e.which == 1) {
 			//leftclick
-			if (skill[$tab][$skill]['base'] < basemax && checkPreReq($skill, $tab) && hasRemaining($this)) {
+			if (e.shiftKey) {
+				remskills = $this.closest('.tree').find('.remaining-skills .rem').text();
+				op = Math.min(remskills, basemax-skill[$tab][$skill]['base']);
+			}
+			else {
+				op = 1;
+			}
+			// console.log(hasRemaining($this, op));
+			if (skill[$tab][$skill]['base'] < basemax && checkPreReq($skill, $tab) && hasRemaining($this, op)) {
 				if(getLvlReq($this) > charlvl) return false;
-				skill[$tab][$skill]['base'] += 1;
-				updateRemaining($this, -1);
-				updateLevelRequired($this, 1);
+				skill[$tab][$skill]['base'] += op;
+				updateRemaining($this, -op);
+				updateLevelRequired($this, op);
 				onSkillUpdate($this, skill[$tab][$skill]['base']);
 			}
 		} else if (e.which == 3) {
