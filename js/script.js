@@ -853,7 +853,6 @@ function checkPreReqOf(e, tab)
 }
 function updateRemaining(elem, operation)
 {
-	// elem.closest('.tab').siblings('.remaining-skills').find('.rem').text('test');
 	rem = elem.closest('.tab').siblings('.counter-wrapper').find('.rem');
 	current = rem.text();
 	rem.text(parseInt(current)+operation);
@@ -900,9 +899,7 @@ function countLvl(c)
 	var count = 0;
 	$('#'+c).find('.lvl').each(function() {
 		var lvl = $(this).html();
-		// console.log(lvl);
 		count += parseInt(lvl);
-		// console.log($(this).html());
 	});
 	
 	console.log(count);
