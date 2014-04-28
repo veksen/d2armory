@@ -1060,11 +1060,21 @@ $(function () {
 			}
 		} else if (e.which == 3) {
 			//rightclick
-			if ((checkPreReqOf($skill, $tab) || skill[$tab][$skill]['base'] > basemin+1) &&
+			if(e.shiftKey) {
+				op = skill[$tab][$skill]['base'];
+			}
+			else {
+				op = 1;
+			}
+			console.log(checkPreReqOf($skill, $tab));
+			// console.log(skill[$tab][$skill]['base']);
+			// console.log(basemin+op+1);
+			// console.log(skill[$tab][$skill]['base'] > basemin);
+			if ((checkPreReqOf($skill, $tab) || skill[$tab][$skill]['base'] > basemin+op) &&
 				skill[$tab][$skill]['base'] > basemin) {
-				skill[$tab][$skill]['base'] -= 1;
-				updateRemaining($this, 1);
-				updateLevelRequired($this, -1);
+				skill[$tab][$skill]['base'] -= op;
+				updateRemaining($this, op);
+				updateLevelRequired($this, -op);
 				onSkillUpdate($this, skill[$tab][$skill]['base']);
 			}
 		}
