@@ -1033,6 +1033,16 @@ function onSkillUpdate(elem, val)
 	setState($tree.attr('id'));
 }
 
+function resetSkills()
+{
+	$this = $(this);
+	$this.closest('.tree').find('.lvl').text('0');
+
+	c = getState().c;
+	buildState(c);
+	applyState();
+}
+
 $(function () {
 	$('.tree > .tab').bind("contextmenu", function (e) {
 		e.preventDefault();
@@ -1080,6 +1090,8 @@ $(function () {
 		}
 		$this.find(".lvl").text(skill[$tab][$skill]['base']);
 	});
+
+	$('.btn.reset').on('click', resetSkills);
 
 	$('.class-switcher li').on('click', switchTab);
 
