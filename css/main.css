@@ -112,6 +112,9 @@ body {
 	float:left;
 	width:200px;
 }
+.reset-wrapper {
+	display:none; /* temp */
+}
 .remaining-skills,
 .required-level {
 	margin-bottom:5px
