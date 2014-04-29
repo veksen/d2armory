@@ -2,11 +2,15 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>Diablo 2 Skill Tree Planner</title>
+	<meta description="Skill tree planner for Diablo 2">
 	<link href="css/main.css" rel="stylesheet">
 </head>
 <body>
 
+<div id="mainHead">
+	<h1>Diablo 2 Skill Tree Planner</h1>
+</div>
 <div id="mainContainer">
 	<div class="class-switcher">
 		<ul>
@@ -15,8 +19,8 @@
 			<li data-class="bar">Barbarian</li>
 			<li data-class="dru">Druid</li>
 			<li data-class="pal">Paladin</li>
-			<li data-class="nec">Necro</li>
-			<li data-class="sor">Sorc</li>
+			<li data-class="nec">Necromancer</li>
+			<li data-class="sor">Sorceress</li>
 		</ul>
 	</div>
 
@@ -126,6 +130,9 @@
 					<span class="lvl">0</span> Required Level
 				</div>
 			</div>
+			<div class="reset-wrapper">
+				<div class="btn reset">Reset Skills</div>
+			</div>
 		</div>
 
 		<div id="sin" class="tree sin">
@@ -232,6 +239,9 @@
 				<div class="required-level">
 					<span class="lvl">0</span> Required Level
 				</div>
+			</div>
+			<div class="reset-wrapper">
+				<div class="btn reset">Reset Skills</div>
 			</div>
 		</div>
 
@@ -340,6 +350,9 @@
 					<span class="lvl">0</span> Required Level
 				</div>
 			</div>
+			<div class="reset-wrapper">
+				<div class="btn reset">Reset Skills</div>
+			</div>
 		</div>
 
 		<div id="dru" class="tree dru">
@@ -446,6 +459,9 @@
 				<div class="required-level">
 					<span class="lvl">0</span> Required Level
 				</div>
+			</div>
+			<div class="reset-wrapper">
+				<div class="btn reset">Reset Skills</div>
 			</div>
 		</div>
 
@@ -554,6 +570,9 @@
 					<span class="lvl">0</span> Required Level
 				</div>
 			</div>
+			<div class="reset-wrapper">
+				<div class="btn reset">Reset Skills</div>
+			</div>
 		</div>
 
 		<div id="nec" class="tree nec">
@@ -660,6 +679,9 @@
 				<div class="required-level">
 					<span class="lvl">0</span> Required Level
 				</div>
+			</div>
+			<div class="reset-wrapper">
+				<div class="btn reset">Reset Skills</div>
 			</div>
 		</div>
 
@@ -768,6 +790,9 @@
 					<span class="lvl">0</span> Required Level
 				</div>
 			</div>
+			<div class="reset-wrapper">
+				<div class="btn reset">Reset Skills</div>
+			</div>
 		</div>
 	</div>
 </div>
@@ -786,6 +811,15 @@
 	});
 
 })(window);
+</script>
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-41578076-1', 'd2armory.net');
+	ga('send', 'pageview');
 </script>
 </body>
 </html>

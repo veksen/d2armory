@@ -999,7 +999,7 @@ function setState(c)
 
 	History.replaceState(
 		{ state:state },
-		"Diablo 2 Skill Tree - "+humanReadable(c),
+		"Diablo 2 Skill Tree Planner - "+humanReadable(c),
 		"?"+state
 	);
 }
@@ -1067,9 +1067,9 @@ $(function () {
 				op = 1;
 			}
 			console.log(checkPreReqOf($skill, $tab));
-			// console.log(skill[$tab][$skill]['base']);
-			// console.log(basemin+op+1);
-			// console.log(skill[$tab][$skill]['base'] > basemin);
+			console.log(skill[$tab][$skill]['base']);
+			console.log(basemin+op+1);
+			console.log(skill[$tab][$skill]['base'] > basemin);
 			if ((checkPreReqOf($skill, $tab) || skill[$tab][$skill]['base'] > basemin+op) &&
 				skill[$tab][$skill]['base'] > basemin) {
 				skill[$tab][$skill]['base'] -= op;

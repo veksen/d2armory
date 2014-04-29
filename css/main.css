@@ -17,7 +17,14 @@ body {
 	font-size:1.6rem;
 	color:#645e54
 }
-
+#mainHead {
+	background:rgba(33,31,30,0.7);
+	margin:0 -15px 15px;
+	padding:15px;
+}
+#mainHead h1 {
+	margin:0;
+}
 #mainContainer {
 	overflow:hidden;
 	/*float:left;*/
@@ -102,7 +109,8 @@ body {
 }
 
 .counter-wrapper {
-	float:left
+	float:left;
+	width:200px;
 }
 .remaining-skills,
 .required-level {
@@ -123,6 +131,24 @@ body {
 	font-weight:700
 }
 
+.reset-wrapper {
+	float:left;
+	width:200px;
+	margin-top:8px;
+}
+.reset.btn {
+	background:#131313;
+	color:#645e54;
+	padding:7px;
+	border-radius:5px;
+	border:2px solid #645e54;
+	text-align:center;
+	cursor:pointer;
+}
+.reset.btn:hover {
+	background:#645e54;
+	color:#131313;
+}
 
 .tree {
 	float:left;
