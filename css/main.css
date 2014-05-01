@@ -40,10 +40,6 @@ a:hover {
 	clear:both;
 	max-width:1200px;
 }
-#about,
-#wip {
-	margin-left:215px;
-}
 .content-wrapper {
 	line-height:1.3;
 }
@@ -125,6 +121,10 @@ a:hover {
 
 
 @media screen and (min-width:960px) {
+	#about,
+	#wip {
+		margin-left:215px;
+	}
 	.class-switcher {
 		width:200px;
 		margin:0 15px 0 0;
