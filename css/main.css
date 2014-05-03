@@ -118,7 +118,18 @@ a:hover {
 	border-color:rgba(125, 45, 46, 0);
 	border-top-color:#531e1f
 }
-
+.tooltip {
+	background:rgba(0,0,0,0.5);
+	padding:15px;
+	display:none;
+	position:absolute;
+	top:55px;
+	left:0;
+	z-index:10;
+}
+.tab > div:hover .tooltip {
+	display:inline-block;
+}
 
 @media screen and (min-width:960px) {
 	#about,

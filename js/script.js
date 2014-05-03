@@ -46,7 +46,12 @@ var skill = {
 	jav:{
 		jab:{
 			base:0,
-			preReqOf:['powerStrike', 'impale']
+			preReqOf:['powerStrike', 'impale'],
+			dmg:[{
+				1:5,
+				2:12,
+				3:19
+			}]
 		}, powerStrike:{
 			base:0,
 			preReqs:['jab'],
@@ -1031,6 +1036,7 @@ function onSkillUpdate(elem, val)
 	$tab.data('skill'+zeroPad(i, 2), zeroPad(val, 2));
 
 	setState($tree.attr('id'));
+	generateTooltip($this);
 }
 
 function resetSkills()
@@ -1043,7 +1049,30 @@ function resetSkills()
 	applyState();
 }
 
+function generateTooltip(elem)
+{
+	if(elem) $this = $(elem)
+	else $this = $(this)
+
+	var _skill = $this.attr('id');
+	var tab = $this.closest('.tab').attr('id');
+	var c = $this.closest('.tree').attr('id');
+
+	var base = skill[tab][_skill]['base'];
+	var tt = skill[tab][_skill]['dmg'][0][base];
+	var html  = '<span class="tooltip">tt '+tt+'</span>';
+
+	$('.tooltip').remove();
+	$(html).appendTo($this);
+}
+function destroyTooltip()
+{
+	$('.tooltip').remove();
+}
+
 $(function () {
+	$('.tree .tab > div').on('hover', generateTooltip);
+	$('.tree .tab > div').on('mouseout', destroyTooltip);
 	$('.tree > .tab').bind("contextmenu", function (e) {
 		e.preventDefault();
 	});
