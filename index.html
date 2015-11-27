@@ -24,8 +24,8 @@
     <div class="trees-wrapper">
       <div v-for="class in classes" id="{{ class.short }}" class="tree {{ class.short }}">
         <div v-for="(tabName, tab) in class.skills" class="tab" id="{{ tabName }}">
-          <div v-for="(skillName, skill) in tab" id="{{ skillName }}" class="r{{ skill.row }} c{{ skill.col }}">
-            <span class="lvl">0</span>
+          <div v-for="(skillName, skill) in tab" id="{{ skillName }}" class="r{{ skill.row }} c{{ skill.col }}" @click="incrementSkill(skill)" @contextmenu.prevent="decrementSkill(skill)">
+            <span class="lvl">{{ skill.base }}</span>
           </div>
         </div>
         <div class="counter-wrapper">

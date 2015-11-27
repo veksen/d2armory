@@ -1457,5 +1457,15 @@ new Vue({
         }
       }
     ]
+  },
+
+  methods: {
+    incrementSkill: function(skill) {
+      skill.base++;
+    },
+
+    decrementSkill: function(skill) {
+      skill.base--;
+    }
   }
 });

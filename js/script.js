@@ -266,49 +266,6 @@ function resetSkills() {
 }
 
 $(function () {
-  $('.tree > .tab').bind("contextmenu", function (e) {
-    e.preventDefault();
-  });
-  $('.tree .tab > div').mousedown(function (e) {
-    var $this = $(this);
-    $this.attr('unselectable', 'on').css('UserSelect', 'none').css('MozUserSelect', 'none');
-    var $tab = $this.parent().attr("id");
-    var $skill = $this.attr("id");
-    if (e.which == 1) {
-      //leftclick
-      if (e.shiftKey) {
-        var remskills = $this.closest('.tree').find('.remaining-skills .rem').text();
-        op = Math.min(remskills, basemax - skill[$tab][$skill]['base']);
-      }
-      else {
-        var op = 1;
-      }
-      if (skill[$tab][$skill]['base'] < basemax && checkPreReq($skill, $tab) && hasRemaining($this, op)) {
-        if (getLvlReq($this) > charlvl) return false;
-        skill[$tab][$skill]['base'] += op;
-        updateRemaining($this, -op);
-        updateLevelRequired($this, op);
-        onSkillUpdate($this, skill[$tab][$skill]['base']);
-      }
-    } else if (e.which == 3) {
-      //rightclick
-      if (e.shiftKey) {
-        var op = skill[$tab][$skill]['base'];
-      }
-      else {
-        var op = 1;
-      }
-      if ((checkPreReqOf($skill, $tab) || skill[$tab][$skill]['base'] > basemin + op) &&
-        skill[$tab][$skill]['base'] > basemin) {
-        skill[$tab][$skill]['base'] -= op;
-        updateRemaining($this, op);
-        updateLevelRequired($this, -op);
-        onSkillUpdate($this, skill[$tab][$skill]['base']);
-      }
-    }
-    $this.find(".lvl").text(skill[$tab][$skill]['base']);
-  });
-
   $('.btn.reset').on('click', resetSkills);
 
   $('.class-switcher li').on('click', switchTab);
