@@ -2,6 +2,7 @@ new Vue({
   el: '#planner',
 
   data: {
+    activeClass: 'zon',
     classes: [
       {
         short: 'zon',
@@ -1460,6 +1461,10 @@ new Vue({
   },
 
   methods: {
+    switchClass: function(_class) {
+      this.activeClass = _class.short;
+    },
+
     incrementSkill: function(skill) {
       skill.base++;
     },

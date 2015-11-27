@@ -17,12 +17,12 @@
   <div id="planner" class="section">
     <div class="class-switcher">
       <ul>
-        <li v-for="class in classes" data-class="{{ class.short }}" class="active">{{ class.long }}</li>
+        <li v-for="class in classes" data-class="{{ class.short }}" :class="{ 'active': activeClass == class.short }" @click="switchClass(class)">{{ class.long }}</li>
       </ul>
     </div>
 
     <div class="trees-wrapper">
-      <div v-for="class in classes" id="{{ class.short }}" class="tree {{ class.short }}">
+      <div v-for="class in classes" v-if="activeClass == class.short"  id="{{ class.short }}" class="tree {{ class.short }}">
         <div class="tabs">
           <div v-for="(tabName, tab) in class.skills" class="tab" id="{{ tabName }}">
             <div v-for="(skillName, skill) in tab" id="{{ skillName }}" class="r{{ skill.row }} c{{ skill.col }}" @click="incrementSkill(skill)" @contextmenu.prevent="decrementSkill(skill)">

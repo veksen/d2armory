@@ -238,7 +238,6 @@ a:hover {
 .tree {
 	float:left;
 	clear:both;
-	display:none
 }
 .tree.active {
 	display:block
