@@ -3,6 +3,12 @@ new Vue({
 
   data: {
     activeClass: 'zon',
+    config: {
+      charLevel: 99,
+      skillQuests: 12,
+      baseMin: 0,
+      baseMax: 20
+    },
     classes: [
       {
         short: 'zon',
@@ -1466,11 +1472,15 @@ new Vue({
     },
 
     incrementSkill: function(skill) {
-      skill.base++;
+      if(skill.base < this.config.baseMax) {
+        skill.base++;
+      }
     },
 
     decrementSkill: function(skill) {
-      skill.base--;
+      if(skill.base > this.config.baseMin) {
+        skill.base--;
+      }
     },
 
     resetSkills: function(_class) {
