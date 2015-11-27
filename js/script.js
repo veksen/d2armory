@@ -188,7 +188,7 @@ function applyState() {
             var tree = state['t' + i];
             var split_tree = tree.match(/.{1,2}/g);
 
-            $tree = $("#" + state['c']).find('.tab').eq(i - 1);
+            var $tree = $("#" + state['c']).find('.tab').eq(i - 1);
 
             for (var ii = 1; ii <= 10; ii++) {
                 $tree.data('skill' + zeroPad(ii, 2), split_tree[ii - 1]);
