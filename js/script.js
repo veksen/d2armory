@@ -266,7 +266,5 @@ function resetSkills() {
 }
 
 $(function () {
-  $('.remaining-skills .rem').text(charlvl + skillquests - 1);
-
   applyState();
 });

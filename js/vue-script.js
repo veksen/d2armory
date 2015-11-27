@@ -1,4 +1,4 @@
-new Vue({
+var vm = new Vue({
   el: '#planner',
 
   data: {
@@ -13,6 +13,7 @@ new Vue({
       {
         short: 'zon',
         long: 'Amazon',
+        remainingSkills: 0,
         skills: {
           jav: {
             jab: {
@@ -249,6 +250,7 @@ new Vue({
       {
         short: 'sin',
         long: 'Assassin',
+        remainingSkills: 0,
         skills: {
           ma: {
             tigerStrike: {
@@ -456,6 +458,7 @@ new Vue({
       {
         short: 'bar',
         long: 'Barbarian',
+        remainingSkills: 0,
         skills: {
           warcries: {
             howl: {
@@ -652,6 +655,7 @@ new Vue({
       {
         short: 'dru',
         long: 'Druid',
+        remainingSkills: 0,
         skills: {
           ele: {
             firestorm: {
@@ -859,6 +863,7 @@ new Vue({
       {
         short: 'pal',
         long: 'Paladin',
+        remainingSkills: 0,
         skills: {
           defensive: {
             prayer: {
@@ -1059,6 +1064,7 @@ new Vue({
       {
         short: 'nec',
         long: 'Necromancer',
+        remainingSkills: 0,
         skills: {
           nsummon: {
             skeletonMastery: {
@@ -1265,6 +1271,7 @@ new Vue({
       {
         short: 'sor',
         long: 'Sorceress',
+        remainingSkills: 0,
         skills: {
           cold: {
             iceBolt: {
@@ -1466,6 +1473,15 @@ new Vue({
     ]
   },
 
+  watch: {
+    'classes': {
+      handler: function() {
+        return this.remainingSkills(this.classes)
+      },
+      deep: true
+    }
+  },
+
   methods: {
     switchClass: function(_class) {
       this.activeClass = _class.short;
@@ -1484,8 +1500,33 @@ new Vue({
     },
 
     resetSkills: function(_class) {
-      _class.skills.forEach(function(skill) {
-        skill.base = 0;
+      console.log(_class.skills);
+      _class.skills.forEach(function(tab) {
+        tab.forEach(function(skill) {
+          skill.base = 0;
+        });
+      });
+    },
+
+    totalSkills: function(_class) {
+      var count = 0;
+      for(var tab in _class.skills) {
+        for(var skill in _class.skills[tab]) {
+          count += _class.skills[tab][skill].base;
+        }
+      }
+      //_class.skills.forEach(function(tab) {
+      //  tab.forEach(function(skill) {
+      //    count += skill.base;
+      //  });
+      //});
+
+      return count;
+    },
+
+    remainingSkills: function(classes) {
+      classes.forEach(function(_class) {
+        _class.remainingSkills = vm.config.charLevel + vm.config.skillQuests - 1 - vm.totalSkills(_class);
       });
     }
   }
