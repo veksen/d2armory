@@ -266,8 +266,6 @@ function resetSkills() {
 }
 
 $(function () {
-  $('.btn.reset').on('click', resetSkills);
-
   $('.class-switcher li').on('click', switchTab);
 
   $('.remaining-skills .rem').text(charlvl + skillquests - 1);

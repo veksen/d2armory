@@ -23,21 +23,25 @@
 
     <div class="trees-wrapper">
       <div v-for="class in classes" id="{{ class.short }}" class="tree {{ class.short }}">
-        <div v-for="(tabName, tab) in class.skills" class="tab" id="{{ tabName }}">
-          <div v-for="(skillName, skill) in tab" id="{{ skillName }}" class="r{{ skill.row }} c{{ skill.col }}" @click="incrementSkill(skill)" @contextmenu.prevent="decrementSkill(skill)">
-            <span class="lvl">{{ skill.base }}</span>
+        <div class="tabs">
+          <div v-for="(tabName, tab) in class.skills" class="tab" id="{{ tabName }}">
+            <div v-for="(skillName, skill) in tab" id="{{ skillName }}" class="r{{ skill.row }} c{{ skill.col }}" @click="incrementSkill(skill)" @contextmenu.prevent="decrementSkill(skill)">
+              <span class="lvl">{{ skill.base }}</span>
+            </div>
           </div>
         </div>
-        <div class="counter-wrapper">
-          <div class="remaining-skills">
-            <span class="rem">0</span> Skills Remaining
+        <div class="tabs-detail">
+          <div class="counter-wrapper">
+            <div class="remaining-skills">
+              <span class="rem">0</span> Skills Remaining
+            </div>
+            <div class="required-level">
+              <span class="lvl">0</span> Required Level
+            </div>
           </div>
-          <div class="required-level">
-            <span class="lvl">0</span> Required Level
+          <div class="reset-wrapper">
+            <div class="btn reset" @click="resetSkills(class)">Reset Skills</div>
           </div>
-        </div>
-        <div class="reset-wrapper">
-          <div class="btn reset">Reset Skills</div>
         </div>
       </div>
     </div>

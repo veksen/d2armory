@@ -199,13 +199,6 @@ a:hover {
 	float:left
 }
 
-.counter-wrapper {
-	float:left;
-	width:200px;
-}
-.reset-wrapper {
-	display:none; /* temp */
-}
 .remaining-skills,
 .required-level {
 	margin-bottom:5px
@@ -226,8 +219,6 @@ a:hover {
 }
 
 .reset-wrapper {
-	float:left;
-	width:200px;
 	margin-top:8px;
 }
 .reset.btn {
@@ -252,6 +243,9 @@ a:hover {
 .tree.active {
 	display:block
 }
+.tree .tabs {
+	float:left;
+}
 .tree .tab {
 	float:left;
 	height:515px;
@@ -272,7 +266,10 @@ a:hover {
 	cursor:pointer;
 	background-repeat:no-repeat
 }
-
+.tree .tabs-detail {
+	width:200px;
+	float:left;
+}
 
 /* AMAZON */
 .tree #jav {

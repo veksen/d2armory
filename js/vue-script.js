@@ -1466,6 +1466,12 @@ new Vue({
 
     decrementSkill: function(skill) {
       skill.base--;
+    },
+
+    resetSkills: function(_class) {
+      _class.skills.forEach(function(skill) {
+        skill.base = 0;
+      });
     }
   }
 });
