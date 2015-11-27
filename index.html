@@ -17,13 +17,7 @@
   <div id="planner" class="section">
     <div class="class-switcher">
       <ul>
-        <li data-class="zon" class="active">Amazon</li>
-        <li data-class="sin">Assasin</li>
-        <li data-class="bar">Barbarian</li>
-        <li data-class="dru">Druid</li>
-        <li data-class="pal">Paladin</li>
-        <li data-class="nec">Necromancer</li>
-        <li data-class="sor">Sorceress</li>
+        <li v-for="class in classes" data-class="{{ class.short }}" class="active">{{ class.long }}</li>
       </ul>
     </div>
 
@@ -843,6 +837,7 @@
 <script src="js/jquery-migrate-1.2.1.min.js"></script>
 <script src="js/data.js"></script>
 <script src="js/script.js"></script>
+<script src="js/vue-script.js"></script>
 <script src="js/jquery.history.js"></script>
 <script>
   (function (window, undefined) {
