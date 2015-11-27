@@ -254,7 +254,6 @@ function onSkillUpdate(elem, val) {
     $tab.data('skill' + zeroPad(i, 2), zeroPad(val, 2));
 
     setState($tree.attr('id'));
-    generateTooltip($this);
 }
 
 function resetSkills() {
@@ -266,47 +265,7 @@ function resetSkills() {
     applyState();
 }
 
-function generateTooltip(e, elem) {
-    var $this = $(this);
-
-    var _skill = $this.attr('id');
-    var tab = $this.closest('.tab').attr('id');
-    var c = $this.closest('.tree').attr('id');
-
-    var base = skill[tab][_skill]['base'];
-
-    var data = skill[tab][_skill];
-
-    var html = '<div class="tooltip">'
-
-    if (data.desc) {
-        var desc = data.desc;
-    }
-    if (data.hasOwnProperty('prop')) {
-        var props = data['prop'];
-
-        for (var prop in props) {
-            var _prop = props[prop];
-            var _propval = props[prop][base];
-            if (_prop.hasOwnProperty('formula')) {
-                // console.log(_prop.formula);
-            }
-            html += '<div>' + prop + ' ' + _propval + '</div>';
-        }
-    }
-
-    html += '</div>';
-
-    $('.tooltip').remove();
-    $(html).appendTo($this);
-}
-function destroyTooltip() {
-    $('.tooltip').remove();
-}
-
 $(function () {
-    $('.tree .tab > div').on('mouseover', generateTooltip);
-    $('.tree .tab > div').on('mouseout', destroyTooltip);
     $('.tree > .tab').bind("contextmenu", function (e) {
         e.preventDefault();
     });
