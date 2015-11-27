@@ -1,826 +1,840 @@
 <!doctype html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Diablo 2 Skill Tree Planner</title>
-	<meta name="description" content="Skill tree planner for Diablo 2">
-	<meta name="viewport" content="width=device-width, user-scalable=no">
-	<link href="css/main.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>Diablo 2 Skill Tree Planner</title>
+  <meta name="description" content="Skill tree planner for Diablo 2">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <link href="css/main.css" rel="stylesheet">
 </head>
 <body>
 
 <div id="mainHead">
-	<h1>Diablo 2 Skill Tree Planner</h1>
+  <h1>Diablo 2 Skill Tree Planner</h1>
 </div>
 <div id="mainContainer">
 
-	<div id="planner" class="section">
-		<div class="class-switcher">
-			<ul>
-				<li data-class="zon" class="active">Amazon</li>
-				<li data-class="sin">Assasin</li>
-				<li data-class="bar">Barbarian</li>
-				<li data-class="dru">Druid</li>
-				<li data-class="pal">Paladin</li>
-				<li data-class="nec">Necromancer</li>
-				<li data-class="sor">Sorceress</li>
-			</ul>
-		</div>
+  <div id="planner" class="section">
+    <div class="class-switcher">
+      <ul>
+        <li data-class="zon" class="active">Amazon</li>
+        <li data-class="sin">Assasin</li>
+        <li data-class="bar">Barbarian</li>
+        <li data-class="dru">Druid</li>
+        <li data-class="pal">Paladin</li>
+        <li data-class="nec">Necromancer</li>
+        <li data-class="sor">Sorceress</li>
+      </ul>
+    </div>
 
-		<div class="trees-wrapper">
-			<div id="zon" class="tree zon active">
-				<div id="jav" class="tab first">
-					<div id="jab" class="r1 c1">
-						<span class="lvl">0</span>
-					</div>
-					<div id="powerStrike" class="r2 c2">
-						<span class="lvl">0</span>
-					</div>
-					<div id="poisonJavelin" class="r2 c3">
-						<span class="lvl">0</span>
-					</div>
-					<div id="impale" class="r3 c1">
-						<span class="lvl">0</span>
-					</div>
-					<div id="lightningBolt" class="r3 c3">
-						<span class="lvl">0</span>
-					</div>
-					<div id="chargedStrike" class="r4 c2">
-						<span class="lvl">0</span>
-					</div>
-					<div id="plagueJavelin" class="r4 c3">
-						<span class="lvl">0</span>
-					</div>
-					<div id="fend" class="r5 c1">
-						<span class="lvl">0</span>
-					</div>
-					<div id="lightningStrike" class="r6 c2">
-						<span class="lvl">0</span>
-					</div>
-					<div id="lightningFury" class="r6 c3">
-						<span class="lvl">0</span>
-					</div>
-				</div>
-				<div id="passive" class="tab second">
-					<div id="innerSight" class="r1 c1">
-						<span class="lvl">0</span>
-					</div>
-					<div id="criticalStrike" class="r1 c3">
-						<span class="lvl">0</span>
-					</div>
-					<div id="dodge" class="r2 c2">
-						<span class="lvl">0</span>
-					</div>
-					<div id="slowMissiles" class="r3 c1">
-						<span class="lvl">0</span>
-					</div>
-					<div id="avoid" class="r3 c2">
-						<span class="lvl">0</span>
-					</div>
-					<div id="penetrate" class="r4 c3">
-						<span class="lvl">0</span>
-					</div>
-					<div id="decoy" class="r5 c1">
-						<span class="lvl">0</span>
-					</div>
-					<div id="evade" class="r5 c2">
-						<span class="lvl">0</span>
-					</div>
-					<div id="valkyrie" class="r6 c1">
-						<span class="lvl">0</span>
-					</div>
-					<div id="pierce" class="r6 c3">
-						<span class="lvl">0</span>
-					</div>
-				</div>
-				<div id="bow" class="tab third">
-					<div id="magicArrow" class="r1 c2">
-						<span class="lvl">0</span>
-					</div>
-					<div id="fireArrow" class="r1 c3">
-						<span class="lvl">0</span>
-					</div>
-					<div id="coldArrow" class="r2 c1">
-						<span class="lvl">0</span>
-					</div>
-					<div id="multipleShot" class="r2 c2">
-						<span class="lvl">0</span>
-					</div>
-					<div id="explodingArrow" class="r3 c3">
-						<span class="lvl">0</span>
-					</div>
-					<div id="iceArrow" class="r4 c1">
-						<span class="lvl">0</span>
-					</div>
-					<div id="guidedArrow" class="r4 c2">
-						<span class="lvl">0</span>
-					</div>
-					<div id="immolationArrow" class="r5 c2">
-						<span class="lvl">0</span>
-					</div>
-					<div id="strafe" class="r5 c3">
-						<span class="lvl">0</span>
-					</div>
-					<div id="freezingArrow" class="r6 c1">
-						<span class="lvl">0</span>
-					</div>
-				</div>
-				<div class="counter-wrapper">
-					<div class="remaining-skills">
-						<span class="rem">0</span> Skills Remaining
-					</div>
-					<div class="required-level">
-						<span class="lvl">0</span> Required Level
-					</div>
-				</div>
-				<div class="reset-wrapper">
-					<div class="btn reset">Reset Skills</div>
-				</div>
-			</div>
+    <div class="trees-wrapper">
+      <div id="zon" class="tree zon active">
+        <div id="jav" class="tab first">
+          <div id="jab" class="r1 c1">
+            <span class="lvl">0</span>
+          </div>
+          <div id="powerStrike" class="r2 c2">
+            <span class="lvl">0</span>
+          </div>
+          <div id="poisonJavelin" class="r2 c3">
+            <span class="lvl">0</span>
+          </div>
+          <div id="impale" class="r3 c1">
+            <span class="lvl">0</span>
+          </div>
+          <div id="lightningBolt" class="r3 c3">
+            <span class="lvl">0</span>
+          </div>
+          <div id="chargedStrike" class="r4 c2">
+            <span class="lvl">0</span>
+          </div>
+          <div id="plagueJavelin" class="r4 c3">
+            <span class="lvl">0</span>
+          </div>
+          <div id="fend" class="r5 c1">
+            <span class="lvl">0</span>
+          </div>
+          <div id="lightningStrike" class="r6 c2">
+            <span class="lvl">0</span>
+          </div>
+          <div id="lightningFury" class="r6 c3">
+            <span class="lvl">0</span>
+          </div>
+        </div>
+        <div id="passive" class="tab second">
+          <div id="innerSight" class="r1 c1">
+            <span class="lvl">0</span>
+          </div>
+          <div id="criticalStrike" class="r1 c3">
+            <span class="lvl">0</span>
+          </div>
+          <div id="dodge" class="r2 c2">
+            <span class="lvl">0</span>
+          </div>
+          <div id="slowMissiles" class="r3 c1">
+            <span class="lvl">0</span>
+          </div>
+          <div id="avoid" class="r3 c2">
+            <span class="lvl">0</span>
+          </div>
+          <div id="penetrate" class="r4 c3">
+            <span class="lvl">0</span>
+          </div>
+          <div id="decoy" class="r5 c1">
+            <span class="lvl">0</span>
+          </div>
+          <div id="evade" class="r5 c2">
+            <span class="lvl">0</span>
+          </div>
+          <div id="valkyrie" class="r6 c1">
+            <span class="lvl">0</span>
+          </div>
+          <div id="pierce" class="r6 c3">
+            <span class="lvl">0</span>
+          </div>
+        </div>
+        <div id="bow" class="tab third">
+          <div id="magicArrow" class="r1 c2">
+            <span class="lvl">0</span>
+          </div>
+          <div id="fireArrow" class="r1 c3">
+            <span class="lvl">0</span>
+          </div>
+          <div id="coldArrow" class="r2 c1">
+            <span class="lvl">0</span>
+          </div>
+          <div id="multipleShot" class="r2 c2">
+            <span class="lvl">0</span>
+          </div>
+          <div id="explodingArrow" class="r3 c3">
+            <span class="lvl">0</span>
+          </div>
+          <div id="iceArrow" class="r4 c1">
+            <span class="lvl">0</span>
+          </div>
+          <div id="guidedArrow" class="r4 c2">
+            <span class="lvl">0</span>
+          </div>
+          <div id="immolationArrow" class="r5 c2">
+            <span class="lvl">0</span>
+          </div>
+          <div id="strafe" class="r5 c3">
+            <span class="lvl">0</span>
+          </div>
+          <div id="freezingArrow" class="r6 c1">
+            <span class="lvl">0</span>
+          </div>
+        </div>
+        <div class="counter-wrapper">
+          <div class="remaining-skills">
+            <span class="rem">0</span> Skills Remaining
+          </div>
+          <div class="required-level">
+            <span class="lvl">0</span> Required Level
+          </div>
+        </div>
+        <div class="reset-wrapper">
+          <div class="btn reset">Reset Skills</div>
+        </div>
+      </div>
 
-			<div id="sin" class="tree sin">
-				<div id="ma" class="tab first">
-					<div id="tigerStrike" class="r1 c2">
-						<span class="lvl">0</span>
-					</div>
-					<div id="dragonTalon" class="r1 c3">
-						<span class="lvl">0</span>
-					</div>
-					<div id="fistsOfFire" class="r2 c1">
-						<span class="lvl">0</span>
-					</div>
-					<div id="dragonClaw" class="r2 c3">
-						<span class="lvl">0</span>
-					</div>
-					<div id="cobraStrike" class="r3 c2">
-						<span class="lvl">0</span>
-					</div>
-					<div id="clawsOfThunder" class="r4 c1">
-						<span class="lvl">0</span>
-					</div>
-					<div id="dragonTail" class="r4 c3">
-						<span class="lvl">0</span>
-					</div>
-					<div id="bladesOfIce" class="r5 c1">
-						<span class="lvl">0</span>
-					</div>
-					<div id="dragonFlight" class="r5 c3">
-						<span class="lvl">0</span>
-					</div>
-					<div id="phoenixStrike" class="r6 c2">
-						<span class="lvl">0</span>
-					</div>
-				</div>
-				<div id="shadow" class="tab second">
-					<div id="clawMastery" class="r1 c2">
-						<span class="lvl">0</span>
-					</div>
-					<div id="psychicHammer" class="r1 c3">
-						<span class="lvl">0</span>
-					</div>
-					<div id="burstOfSpeed" class="r2 c1">
-						<span class="lvl">0</span>
-					</div>
-					<div id="weaponBlock" class="r3 c2">
-						<span class="lvl">0</span>
-					</div>
-					<div id="cloakOfShadows" class="r3 c3">
-						<span class="lvl">0</span>
-					</div>
-					<div id="fade" class="r4 c1">
-						<span class="lvl">0</span>
-					</div>
-					<div id="shadowWarrior" class="r4 c2">
-						<span class="lvl">0</span>
-					</div>
-					<div id="mindBlast" class="r5 c3">
-						<span class="lvl">0</span>
-					</div>
-					<div id="venom" class="r6 c1">
-						<span class="lvl">0</span>
-					</div>
-					<div id="shadowMaster" class="r6 c2">
-						<span class="lvl">0</span>
-					</div>
-				</div>
-				<div id="traps" class="tab third">
-					<div id="fireBlast" class="r1 c2">
-						<span class="lvl">0</span>
-					</div>
-					<div id="shockWeb" class="r2 c1">
-						<span class="lvl">0</span>
-					</div>
-					<div id="bladeSentinel" class="r2 c3">
-						<span class="lvl">0</span>
-					</div>
-					<div id="chargedBoltSentry" class="r3 c1">
-						<span class="lvl">0</span>
-					</div>
-					<div id="wakeOfFire" class="r3 c2">
-						<span class="lvl">0</span>
-					</div>
-					<div id="bladeFury" class="r4 c3">
-						<span class="lvl">0</span>
-					</div>
-					<div id="lightningSentry" class="r5 c1">
-						<span class="lvl">0</span>
-					</div>
-					<div id="wakeOfInferno" class="r5 c2">
-						<span class="lvl">0</span>
-					</div>
-					<div id="deathSentry" class="r6 c1">
-						<span class="lvl">0</span>
-					</div>
-					<div id="bladeShield" class="r6 c3">
-						<span class="lvl">0</span>
-					</div>
-				</div>
-				<div class="counter-wrapper">
-					<div class="remaining-skills">
-						<span class="rem">0</span> Skills Remaining
-					</div>
-					<div class="required-level">
-						<span class="lvl">0</span> Required Level
-					</div>
-				</div>
-				<div class="reset-wrapper">
-					<div class="btn reset">Reset Skills</div>
-				</div>
-			</div>
+      <div id="sin" class="tree sin">
+        <div id="ma" class="tab first">
+          <div id="tigerStrike" class="r1 c2">
+            <span class="lvl">0</span>
+          </div>
+          <div id="dragonTalon" class="r1 c3">
+            <span class="lvl">0</span>
+          </div>
+          <div id="fistsOfFire" class="r2 c1">
+            <span class="lvl">0</span>
+          </div>
+          <div id="dragonClaw" class="r2 c3">
+            <span class="lvl">0</span>
+          </div>
+          <div id="cobraStrike" class="r3 c2">
+            <span class="lvl">0</span>
+          </div>
+          <div id="clawsOfThunder" class="r4 c1">
+            <span class="lvl">0</span>
+          </div>
+          <div id="dragonTail" class="r4 c3">
+            <span class="lvl">0</span>
+          </div>
+          <div id="bladesOfIce" class="r5 c1">
+            <span class="lvl">0</span>
+          </div>
+          <div id="dragonFlight" class="r5 c3">
+            <span class="lvl">0</span>
+          </div>
+          <div id="phoenixStrike" class="r6 c2">
+            <span class="lvl">0</span>
+          </div>
+        </div>
+        <div id="shadow" class="tab second">
+          <div id="clawMastery" class="r1 c2">
+            <span class="lvl">0</span>
+          </div>
+          <div id="psychicHammer" class="r1 c3">
+            <span class="lvl">0</span>
+          </div>
+          <div id="burstOfSpeed" class="r2 c1">
+            <span class="lvl">0</span>
+          </div>
+          <div id="weaponBlock" class="r3 c2">
+            <span class="lvl">0</span>
+          </div>
+          <div id="cloakOfShadows" class="r3 c3">
+            <span class="lvl">0</span>
+          </div>
+          <div id="fade" class="r4 c1">
+            <span class="lvl">0</span>
+          </div>
+          <div id="shadowWarrior" class="r4 c2">
+            <span class="lvl">0</span>
+          </div>
+          <div id="mindBlast" class="r5 c3">
+            <span class="lvl">0</span>
+          </div>
+          <div id="venom" class="r6 c1">
+            <span class="lvl">0</span>
+          </div>
+          <div id="shadowMaster" class="r6 c2">
+            <span class="lvl">0</span>
+          </div>
+        </div>
+        <div id="traps" class="tab third">
+          <div id="fireBlast" class="r1 c2">
+            <span class="lvl">0</span>
+          </div>
+          <div id="shockWeb" class="r2 c1">
+            <span class="lvl">0</span>
+          </div>
+          <div id="bladeSentinel" class="r2 c3">
+            <span class="lvl">0</span>
+          </div>
+          <div id="chargedBoltSentry" class="r3 c1">
+            <span class="lvl">0</span>
+          </div>
+          <div id="wakeOfFire" class="r3 c2">
+            <span class="lvl">0</span>
+          </div>
+          <div id="bladeFury" class="r4 c3">
+            <span class="lvl">0</span>
+          </div>
+          <div id="lightningSentry" class="r5 c1">
+            <span class="lvl">0</span>
+          </div>
+          <div id="wakeOfInferno" class="r5 c2">
+            <span class="lvl">0</span>
+          </div>
+          <div id="deathSentry" class="r6 c1">
+            <span class="lvl">0</span>
+          </div>
+          <div id="bladeShield" class="r6 c3">
+            <span class="lvl">0</span>
+          </div>
+        </div>
+        <div class="counter-wrapper">
+          <div class="remaining-skills">
+            <span class="rem">0</span> Skills Remaining
+          </div>
+          <div class="required-level">
+            <span class="lvl">0</span> Required Level
+          </div>
+        </div>
+        <div class="reset-wrapper">
+          <div class="btn reset">Reset Skills</div>
+        </div>
+      </div>
 
-			<div id="bar" class="tree bar">
-				<div id="warcries" class="tab first">
-					<div id="howl" class="r1 c1">
-						<span class="lvl">0</span>
-					</div>
-					<div id="findPotion" class="r1 c3">
-						<span class="lvl">0</span>
-					</div>
-					<div id="taunt" class="r2 c1">
-						<span class="lvl">0</span>
-					</div>
-					<div id="shout" class="r2 c2">
-						<span class="lvl">0</span>
-					</div>
-					<div id="findItem" class="r3 c3">
-						<span class="lvl">0</span>
-					</div>
-					<div id="battleCry" class="r4 c1">
-						<span class="lvl">0</span>
-					</div>
-					<div id="battleOrders" class="r5 c2">
-						<span class="lvl">0</span>
-					</div>
-					<div id="grimWard" class="r5 c3">
-						<span class="lvl">0</span>
-					</div>
-					<div id="warCry" class="r6 c1">
-						<span class="lvl">0</span>
-					</div>
-					<div id="battleCommand" class="r6 c2">
-						<span class="lvl">0</span>
-					</div>
-				</div>
-				<div id="masteries" class="tab second">
-					<div id="swordMastery" class="r1 c1">
-						<span class="lvl">0</span>
-					</div>
-					<div id="axeMastery" class="r1 c2">
-						<span class="lvl">0</span>
-					</div>
-					<div id="maceMastery" class="r1 c3">
-						<span class="lvl">0</span>
-					</div>
-					<div id="polearmMastery" class="r2 c1">
-						<span class="lvl">0</span>
-					</div>
-					<div id="throwingMastery" class="r2 c2">
-						<span class="lvl">0</span>
-					</div>
-					<div id="spearMastery" class="r2 c3">
-						<span class="lvl">0</span>
-					</div>
-					<div id="increasedStamina" class="r3 c1">
-						<span class="lvl">0</span>
-					</div>
-					<div id="ironSkin" class="r4 c3">
-						<span class="lvl">0</span>
-					</div>
-					<div id="increasedSpeed" class="r5 c1">
-						<span class="lvl">0</span>
-					</div>
-					<div id="naturalResistances" class="r6 c3">
-						<span class="lvl">0</span>
-					</div>
-				</div>
-				<div id="bcombat" class="tab third">
-					<div id="bash" class="r1 c2">
-						<span class="lvl">0</span>
-					</div>
-					<div id="leap" class="r2 c1">
-						<span class="lvl">0</span>
-					</div>
-					<div id="doubleSwing" class="r2 c3">
-						<span class="lvl">0</span>
-					</div>
-					<div id="stun" class="r3 c2">
-						<span class="lvl">0</span>
-					</div>
-					<div id="doubleThrow" class="r3 c3">
-						<span class="lvl">0</span>
-					</div>
-					<div id="leapAttack" class="r4 c1">
-						<span class="lvl">0</span>
-					</div>
-					<div id="concentrate" class="r4 c2">
-						<span class="lvl">0</span>
-					</div>
-					<div id="frenzy" class="r5 c3">
-						<span class="lvl">0</span>
-					</div>
-					<div id="whirlwind" class="r6 c1">
-						<span class="lvl">0</span>
-					</div>
-					<div id="berserk" class="r6 c2">
-						<span class="lvl">0</span>
-					</div>
-				</div>
-				<div class="counter-wrapper">
-					<div class="remaining-skills">
-						<span class="rem">0</span> Skills Remaining
-					</div>
-					<div class="required-level">
-						<span class="lvl">0</span> Required Level
-					</div>
-				</div>
-				<div class="reset-wrapper">
-					<div class="btn reset">Reset Skills</div>
-				</div>
-			</div>
+      <div id="bar" class="tree bar">
+        <div id="warcries" class="tab first">
+          <div id="howl" class="r1 c1">
+            <span class="lvl">0</span>
+          </div>
+          <div id="findPotion" class="r1 c3">
+            <span class="lvl">0</span>
+          </div>
+          <div id="taunt" class="r2 c1">
+            <span class="lvl">0</span>
+          </div>
+          <div id="shout" class="r2 c2">
+            <span class="lvl">0</span>
+          </div>
+          <div id="findItem" class="r3 c3">
+            <span class="lvl">0</span>
+          </div>
+          <div id="battleCry" class="r4 c1">
+            <span class="lvl">0</span>
+          </div>
+          <div id="battleOrders" class="r5 c2">
+            <span class="lvl">0</span>
+          </div>
+          <div id="grimWard" class="r5 c3">
+            <span class="lvl">0</span>
+          </div>
+          <div id="warCry" class="r6 c1">
+            <span class="lvl">0</span>
+          </div>
+          <div id="battleCommand" class="r6 c2">
+            <span class="lvl">0</span>
+          </div>
+        </div>
+        <div id="masteries" class="tab second">
+          <div id="swordMastery" class="r1 c1">
+            <span class="lvl">0</span>
+          </div>
+          <div id="axeMastery" class="r1 c2">
+            <span class="lvl">0</span>
+          </div>
+          <div id="maceMastery" class="r1 c3">
+            <span class="lvl">0</span>
+          </div>
+          <div id="polearmMastery" class="r2 c1">
+            <span class="lvl">0</span>
+          </div>
+          <div id="throwingMastery" class="r2 c2">
+            <span class="lvl">0</span>
+          </div>
+          <div id="spearMastery" class="r2 c3">
+            <span class="lvl">0</span>
+          </div>
+          <div id="increasedStamina" class="r3 c1">
+            <span class="lvl">0</span>
+          </div>
+          <div id="ironSkin" class="r4 c3">
+            <span class="lvl">0</span>
+          </div>
+          <div id="increasedSpeed" class="r5 c1">
+            <span class="lvl">0</span>
+          </div>
+          <div id="naturalResistances" class="r6 c3">
+            <span class="lvl">0</span>
+          </div>
+        </div>
+        <div id="bcombat" class="tab third">
+          <div id="bash" class="r1 c2">
+            <span class="lvl">0</span>
+          </div>
+          <div id="leap" class="r2 c1">
+            <span class="lvl">0</span>
+          </div>
+          <div id="doubleSwing" class="r2 c3">
+            <span class="lvl">0</span>
+          </div>
+          <div id="stun" class="r3 c2">
+            <span class="lvl">0</span>
+          </div>
+          <div id="doubleThrow" class="r3 c3">
+            <span class="lvl">0</span>
+          </div>
+          <div id="leapAttack" class="r4 c1">
+            <span class="lvl">0</span>
+          </div>
+          <div id="concentrate" class="r4 c2">
+            <span class="lvl">0</span>
+          </div>
+          <div id="frenzy" class="r5 c3">
+            <span class="lvl">0</span>
+          </div>
+          <div id="whirlwind" class="r6 c1">
+            <span class="lvl">0</span>
+          </div>
+          <div id="berserk" class="r6 c2">
+            <span class="lvl">0</span>
+          </div>
+        </div>
+        <div class="counter-wrapper">
+          <div class="remaining-skills">
+            <span class="rem">0</span> Skills Remaining
+          </div>
+          <div class="required-level">
+            <span class="lvl">0</span> Required Level
+          </div>
+        </div>
+        <div class="reset-wrapper">
+          <div class="btn reset">Reset Skills</div>
+        </div>
+      </div>
 
-			<div id="dru" class="tree dru">
-				<div id="ele" class="tab first">
-					<div id="firestorm" class="r1 c1">
-						<span class="lvl">0</span>
-					</div>
-					<div id="moltenBoulder" class="r2 c1">
-						<span class="lvl">0</span>
-					</div>
-					<div id="arcticBlast" class="r2 c3">
-						<span class="lvl">0</span>
-					</div>
-					<div id="fissure" class="r3 c1">
-						<span class="lvl">0</span>
-					</div>
-					<div id="cycloneArmor" class="r3 c3">
-						<span class="lvl">0</span>
-					</div>
-					<div id="twister" class="r4 c2">
-						<span class="lvl">0</span>
-					</div>
-					<div id="volcano" class="r5 c1">
-						<span class="lvl">0</span>
-					</div>
-					<div id="tornado" class="r5 c2">
-						<span class="lvl">0</span>
-					</div>
-					<div id="armageddon" class="r6 c1">
-						<span class="lvl">0</span>
-					</div>
-					<div id="hurricane" class="r6 c2">
-						<span class="lvl">0</span>
-					</div>
-				</div>
-				<div id="ss" class="tab second">
-					<div id="werewolf" class="r1 c1">
-						<span class="lvl">0</span>
-					</div>
-					<div id="lycanthropy" class="r1 c2">
-						<span class="lvl">0</span>
-					</div>
-					<div id="werebear" class="r2 c3">
-						<span class="lvl">0</span>
-					</div>
-					<div id="feralRage" class="r3 c1">
-						<span class="lvl">0</span>
-					</div>
-					<div id="maul" class="r3 c3">
-						<span class="lvl">0</span>
-					</div>
-					<div id="rabies" class="r4 c1">
-						<span class="lvl">0</span>
-					</div>
-					<div id="fireClaws" class="r4 c2">
-						<span class="lvl">0</span>
-					</div>
-					<div id="hunger" class="r5 c2">
-						<span class="lvl">0</span>
-					</div>
-					<div id="shockWave" class="r5 c3">
-						<span class="lvl">0</span>
-					</div>
-					<div id="fury" class="r6 c1">
-						<span class="lvl">0</span>
-					</div>
-				</div>
-				<div id="dsummon" class="tab third">
-					<div id="raven" class="r1 c2">
-						<span class="lvl">0</span>
-					</div>
-					<div id="poisonCreeper" class="r1 c3">
-						<span class="lvl">0</span>
-					</div>
-					<div id="oakSage" class="r2 c1">
-						<span class="lvl">0</span>
-					</div>
-					<div id="summonSpiritWolf" class="r2 c2">
-						<span class="lvl">0</span>
-					</div>
-					<div id="carrionVine" class="r3 c3">
-						<span class="lvl">0</span>
-					</div>
-					<div id="heartOfWolverine" class="r4 c1">
-						<span class="lvl">0</span>
-					</div>
-					<div id="summonDireWolf" class="r4 c2">
-						<span class="lvl">0</span>
-					</div>
-					<div id="solarCreeper" class="r5 c3">
-						<span class="lvl">0</span>
-					</div>
-					<div id="spiritOfBarbs" class="r6 c1">
-						<span class="lvl">0</span>
-					</div>
-					<div id="summonGrizzly" class="r6 c2">
-						<span class="lvl">0</span>
-					</div>
-				</div>
-				<div class="counter-wrapper">
-					<div class="remaining-skills">
-						<span class="rem">0</span> Skills Remaining
-					</div>
-					<div class="required-level">
-						<span class="lvl">0</span> Required Level
-					</div>
-				</div>
-				<div class="reset-wrapper">
-					<div class="btn reset">Reset Skills</div>
-				</div>
-			</div>
+      <div id="dru" class="tree dru">
+        <div id="ele" class="tab first">
+          <div id="firestorm" class="r1 c1">
+            <span class="lvl">0</span>
+          </div>
+          <div id="moltenBoulder" class="r2 c1">
+            <span class="lvl">0</span>
+          </div>
+          <div id="arcticBlast" class="r2 c3">
+            <span class="lvl">0</span>
+          </div>
+          <div id="fissure" class="r3 c1">
+            <span class="lvl">0</span>
+          </div>
+          <div id="cycloneArmor" class="r3 c3">
+            <span class="lvl">0</span>
+          </div>
+          <div id="twister" class="r4 c2">
+            <span class="lvl">0</span>
+          </div>
+          <div id="volcano" class="r5 c1">
+            <span class="lvl">0</span>
+          </div>
+          <div id="tornado" class="r5 c2">
+            <span class="lvl">0</span>
+          </div>
+          <div id="armageddon" class="r6 c1">
+            <span class="lvl">0</span>
+          </div>
+          <div id="hurricane" class="r6 c2">
+            <span class="lvl">0</span>
+          </div>
+        </div>
+        <div id="ss" class="tab second">
+          <div id="werewolf" class="r1 c1">
+            <span class="lvl">0</span>
+          </div>
+          <div id="lycanthropy" class="r1 c2">
+            <span class="lvl">0</span>
+          </div>
+          <div id="werebear" class="r2 c3">
+            <span class="lvl">0</span>
+          </div>
+          <div id="feralRage" class="r3 c1">
+            <span class="lvl">0</span>
+          </div>
+          <div id="maul" class="r3 c3">
+            <span class="lvl">0</span>
+          </div>
+          <div id="rabies" class="r4 c1">
+            <span class="lvl">0</span>
+          </div>
+          <div id="fireClaws" class="r4 c2">
+            <span class="lvl">0</span>
+          </div>
+          <div id="hunger" class="r5 c2">
+            <span class="lvl">0</span>
+          </div>
+          <div id="shockWave" class="r5 c3">
+            <span class="lvl">0</span>
+          </div>
+          <div id="fury" class="r6 c1">
+            <span class="lvl">0</span>
+          </div>
+        </div>
+        <div id="dsummon" class="tab third">
+          <div id="raven" class="r1 c2">
+            <span class="lvl">0</span>
+          </div>
+          <div id="poisonCreeper" class="r1 c3">
+            <span class="lvl">0</span>
+          </div>
+          <div id="oakSage" class="r2 c1">
+            <span class="lvl">0</span>
+          </div>
+          <div id="summonSpiritWolf" class="r2 c2">
+            <span class="lvl">0</span>
+          </div>
+          <div id="carrionVine" class="r3 c3">
+            <span class="lvl">0</span>
+          </div>
+          <div id="heartOfWolverine" class="r4 c1">
+            <span class="lvl">0</span>
+          </div>
+          <div id="summonDireWolf" class="r4 c2">
+            <span class="lvl">0</span>
+          </div>
+          <div id="solarCreeper" class="r5 c3">
+            <span class="lvl">0</span>
+          </div>
+          <div id="spiritOfBarbs" class="r6 c1">
+            <span class="lvl">0</span>
+          </div>
+          <div id="summonGrizzly" class="r6 c2">
+            <span class="lvl">0</span>
+          </div>
+        </div>
+        <div class="counter-wrapper">
+          <div class="remaining-skills">
+            <span class="rem">0</span> Skills Remaining
+          </div>
+          <div class="required-level">
+            <span class="lvl">0</span> Required Level
+          </div>
+        </div>
+        <div class="reset-wrapper">
+          <div class="btn reset">Reset Skills</div>
+        </div>
+      </div>
 
-			<div id="pal" class="tree pal">
-				<div id="defensive" class="tab first">
-					<div id="prayer" class="r1 c1">
-						<span class="lvl">0</span>
-					</div>
-					<div id="resistFire" class="r1 c3">
-						<span class="lvl">0</span>
-					</div>
-					<div id="defiance" class="r2 c2">
-						<span class="lvl">0</span>
-					</div>
-					<div id="resistCold" class="r2 c3">
-						<span class="lvl">0</span>
-					</div>
-					<div id="cleansing" class="r3 c1">
-						<span class="lvl">0</span>
-					</div>
-					<div id="resistLightning" class="r3 c3">
-						<span class="lvl">0</span>
-					</div>
-					<div id="vigor" class="r4 c2">
-						<span class="lvl">0</span>
-					</div>
-					<div id="meditation" class="r5 c1">
-						<span class="lvl">0</span>
-					</div>
-					<div id="redemption" class="r6 c2">
-						<span class="lvl">0</span>
-					</div>
-					<div id="salvation" class="r6 c3">
-						<span class="lvl">0</span>
-					</div>
-				</div>
-				<div id="offensive" class="tab second">
-					<div id="might" class="r1 c1">
-						<span class="lvl">0</span>
-					</div>
-					<div id="holyFire" class="r2 c2">
-						<span class="lvl">0</span>
-					</div>
-					<div id="thorns" class="r2 c3">
-						<span class="lvl">0</span>
-					</div>
-					<div id="blessedAim" class="r3 c1">
-						<span class="lvl">0</span>
-					</div>
-					<div id="concentration" class="r4 c1">
-						<span class="lvl">0</span>
-					</div>
-					<div id="holyFreeze" class="r4 c2">
-						<span class="lvl">0</span>
-					</div>
-					<div id="holyShock" class="r5 c2">
-						<span class="lvl">0</span>
-					</div>
-					<div id="sanctuary" class="r5 c3">
-						<span class="lvl">0</span>
-					</div>
-					<div id="fanaticism" class="r6 c1">
-						<span class="lvl">0</span>
-					</div>
-					<div id="conviction" class="r6 c3">
-						<span class="lvl">0</span>
-					</div>
-				</div>
-				<div id="pcombat" class="tab third">
-					<div id="sacrifice" class="r1 c1">
-						<span class="lvl">0</span>
-					</div>
-					<div id="smite" class="r1 c3">
-						<span class="lvl">0</span>
-					</div>
-					<div id="holyBolt" class="r2 c2">
-						<span class="lvl">0</span>
-					</div>
-					<div id="zeal" class="r3 c1">
-						<span class="lvl">0</span>
-					</div>
-					<div id="charge" class="r3 c3">
-						<span class="lvl">0</span>
-					</div>
-					<div id="vengeance" class="r4 c1">
-						<span class="lvl">0</span>
-					</div>
-					<div id="blessedHammer" class="r4 c2">
-						<span class="lvl">0</span>
-					</div>
-					<div id="conversion" class="r5 c1">
-						<span class="lvl">0</span>
-					</div>
-					<div id="holyShield" class="r5 c3">
-						<span class="lvl">0</span>
-					</div>
-					<div id="fistOfTheHeavens" class="r6 c2">
-						<span class="lvl">0</span>
-					</div>
-				</div>
-				<div class="counter-wrapper">
-					<div class="remaining-skills">
-						<span class="rem">0</span> Skills Remaining
-					</div>
-					<div class="required-level">
-						<span class="lvl">0</span> Required Level
-					</div>
-				</div>
-				<div class="reset-wrapper">
-					<div class="btn reset">Reset Skills</div>
-				</div>
-			</div>
+      <div id="pal" class="tree pal">
+        <div id="defensive" class="tab first">
+          <div id="prayer" class="r1 c1">
+            <span class="lvl">0</span>
+          </div>
+          <div id="resistFire" class="r1 c3">
+            <span class="lvl">0</span>
+          </div>
+          <div id="defiance" class="r2 c2">
+            <span class="lvl">0</span>
+          </div>
+          <div id="resistCold" class="r2 c3">
+            <span class="lvl">0</span>
+          </div>
+          <div id="cleansing" class="r3 c1">
+            <span class="lvl">0</span>
+          </div>
+          <div id="resistLightning" class="r3 c3">
+            <span class="lvl">0</span>
+          </div>
+          <div id="vigor" class="r4 c2">
+            <span class="lvl">0</span>
+          </div>
+          <div id="meditation" class="r5 c1">
+            <span class="lvl">0</span>
+          </div>
+          <div id="redemption" class="r6 c2">
+            <span class="lvl">0</span>
+          </div>
+          <div id="salvation" class="r6 c3">
+            <span class="lvl">0</span>
+          </div>
+        </div>
+        <div id="offensive" class="tab second">
+          <div id="might" class="r1 c1">
+            <span class="lvl">0</span>
+          </div>
+          <div id="holyFire" class="r2 c2">
+            <span class="lvl">0</span>
+          </div>
+          <div id="thorns" class="r2 c3">
+            <span class="lvl">0</span>
+          </div>
+          <div id="blessedAim" class="r3 c1">
+            <span class="lvl">0</span>
+          </div>
+          <div id="concentration" class="r4 c1">
+            <span class="lvl">0</span>
+          </div>
+          <div id="holyFreeze" class="r4 c2">
+            <span class="lvl">0</span>
+          </div>
+          <div id="holyShock" class="r5 c2">
+            <span class="lvl">0</span>
+          </div>
+          <div id="sanctuary" class="r5 c3">
+            <span class="lvl">0</span>
+          </div>
+          <div id="fanaticism" class="r6 c1">
+            <span class="lvl">0</span>
+          </div>
+          <div id="conviction" class="r6 c3">
+            <span class="lvl">0</span>
+          </div>
+        </div>
+        <div id="pcombat" class="tab third">
+          <div id="sacrifice" class="r1 c1">
+            <span class="lvl">0</span>
+          </div>
+          <div id="smite" class="r1 c3">
+            <span class="lvl">0</span>
+          </div>
+          <div id="holyBolt" class="r2 c2">
+            <span class="lvl">0</span>
+          </div>
+          <div id="zeal" class="r3 c1">
+            <span class="lvl">0</span>
+          </div>
+          <div id="charge" class="r3 c3">
+            <span class="lvl">0</span>
+          </div>
+          <div id="vengeance" class="r4 c1">
+            <span class="lvl">0</span>
+          </div>
+          <div id="blessedHammer" class="r4 c2">
+            <span class="lvl">0</span>
+          </div>
+          <div id="conversion" class="r5 c1">
+            <span class="lvl">0</span>
+          </div>
+          <div id="holyShield" class="r5 c3">
+            <span class="lvl">0</span>
+          </div>
+          <div id="fistOfTheHeavens" class="r6 c2">
+            <span class="lvl">0</span>
+          </div>
+        </div>
+        <div class="counter-wrapper">
+          <div class="remaining-skills">
+            <span class="rem">0</span> Skills Remaining
+          </div>
+          <div class="required-level">
+            <span class="lvl">0</span> Required Level
+          </div>
+        </div>
+        <div class="reset-wrapper">
+          <div class="btn reset">Reset Skills</div>
+        </div>
+      </div>
 
-			<div id="nec" class="tree nec">
-				<div id="nsummon" class="tab first">
-					<div id="skeletonMastery" class="r1 c1">
-						<span class="lvl">0</span>
-					</div>
-					<div id="raiseSkeleton" class="r1 c3">
-						<span class="lvl">0</span>
-					</div>
-					<div id="clayGolem" class="r2 c2">
-						<span class="lvl">0</span>
-					</div>
-					<div id="golemMastery" class="r3 c1">
-						<span class="lvl">0</span>
-					</div>
-					<div id="skeletalMage" class="r3 c3">
-						<span class="lvl">0</span>
-					</div>
-					<div id="bloodGolem" class="r4 c2">
-						<span class="lvl">0</span>
-					</div>
-					<div id="summonResist" class="r5 c1">
-						<span class="lvl">0</span>
-					</div>
-					<div id="ironGolem" class="r5 c2">
-						<span class="lvl">0</span>
-					</div>
-					<div id="fireGolem" class="r6 c2">
-						<span class="lvl">0</span>
-					</div>
-					<div id="revive" class="r6 c3">
-						<span class="lvl">0</span>
-					</div>
-				</div>
-				<div id="bnp" class="tab second">
-					<div id="teeth" class="r1 c2">
-						<span class="lvl">0</span>
-					</div>
-					<div id="boneArmor" class="r1 c3">
-						<span class="lvl">0</span>
-					</div>
-					<div id="poisonDagger" class="r2 c1">
-						<span class="lvl">0</span>
-					</div>
-					<div id="corpseExplosion" class="r2 c2">
-						<span class="lvl">0</span>
-					</div>
-					<div id="boneWall" class="r3 c3">
-						<span class="lvl">0</span>
-					</div>
-					<div id="poisonExplosion" class="r4 c1">
-						<span class="lvl">0</span>
-					</div>
-					<div id="boneSpear" class="r4 c2">
-						<span class="lvl">0</span>
-					</div>
-					<div id="bonePrison" class="r5 c3">
-						<span class="lvl">0</span>
-					</div>
-					<div id="poisonNova" class="r6 c1">
-						<span class="lvl">0</span>
-					</div>
-					<div id="boneSpirit" class="r6 c2">
-						<span class="lvl">0</span>
-					</div>
-				</div>
-				<div id="curses" class="tab third">
-					<div id="amplifyDamage" class="r1 c2">
-						<span class="lvl">0</span>
-					</div>
-					<div id="dimVision" class="r2 c1">
-						<span class="lvl">0</span>
-					</div>
-					<div id="weaken" class="r2 c3">
-						<span class="lvl">0</span>
-					</div>
-					<div id="ironMaiden" class="r3 c2">
-						<span class="lvl">0</span>
-					</div>
-					<div id="terror" class="r3 c3">
-						<span class="lvl">0</span>
-					</div>
-					<div id="confuse" class="r4 c1">
-						<span class="lvl">0</span>
-					</div>
-					<div id="lifeTap" class="r4 c2">
-						<span class="lvl">0</span>
-					</div>
-					<div id="attract" class="r5 c1">
-						<span class="lvl">0</span>
-					</div>
-					<div id="decrepify" class="r5 c3">
-						<span class="lvl">0</span>
-					</div>
-					<div id="lowerResist" class="r6 c2">
-						<span class="lvl">0</span>
-					</div>
-				</div>
-				<div class="counter-wrapper">
-					<div class="remaining-skills">
-						<span class="rem">0</span> Skills Remaining
-					</div>
-					<div class="required-level">
-						<span class="lvl">0</span> Required Level
-					</div>
-				</div>
-				<div class="reset-wrapper">
-					<div class="btn reset">Reset Skills</div>
-				</div>
-			</div>
+      <div id="nec" class="tree nec">
+        <div id="nsummon" class="tab first">
+          <div id="skeletonMastery" class="r1 c1">
+            <span class="lvl">0</span>
+          </div>
+          <div id="raiseSkeleton" class="r1 c3">
+            <span class="lvl">0</span>
+          </div>
+          <div id="clayGolem" class="r2 c2">
+            <span class="lvl">0</span>
+          </div>
+          <div id="golemMastery" class="r3 c1">
+            <span class="lvl">0</span>
+          </div>
+          <div id="skeletalMage" class="r3 c3">
+            <span class="lvl">0</span>
+          </div>
+          <div id="bloodGolem" class="r4 c2">
+            <span class="lvl">0</span>
+          </div>
+          <div id="summonResist" class="r5 c1">
+            <span class="lvl">0</span>
+          </div>
+          <div id="ironGolem" class="r5 c2">
+            <span class="lvl">0</span>
+          </div>
+          <div id="fireGolem" class="r6 c2">
+            <span class="lvl">0</span>
+          </div>
+          <div id="revive" class="r6 c3">
+            <span class="lvl">0</span>
+          </div>
+        </div>
+        <div id="bnp" class="tab second">
+          <div id="teeth" class="r1 c2">
+            <span class="lvl">0</span>
+          </div>
+          <div id="boneArmor" class="r1 c3">
+            <span class="lvl">0</span>
+          </div>
+          <div id="poisonDagger" class="r2 c1">
+            <span class="lvl">0</span>
+          </div>
+          <div id="corpseExplosion" class="r2 c2">
+            <span class="lvl">0</span>
+          </div>
+          <div id="boneWall" class="r3 c3">
+            <span class="lvl">0</span>
+          </div>
+          <div id="poisonExplosion" class="r4 c1">
+            <span class="lvl">0</span>
+          </div>
+          <div id="boneSpear" class="r4 c2">
+            <span class="lvl">0</span>
+          </div>
+          <div id="bonePrison" class="r5 c3">
+            <span class="lvl">0</span>
+          </div>
+          <div id="poisonNova" class="r6 c1">
+            <span class="lvl">0</span>
+          </div>
+          <div id="boneSpirit" class="r6 c2">
+            <span class="lvl">0</span>
+          </div>
+        </div>
+        <div id="curses" class="tab third">
+          <div id="amplifyDamage" class="r1 c2">
+            <span class="lvl">0</span>
+          </div>
+          <div id="dimVision" class="r2 c1">
+            <span class="lvl">0</span>
+          </div>
+          <div id="weaken" class="r2 c3">
+            <span class="lvl">0</span>
+          </div>
+          <div id="ironMaiden" class="r3 c2">
+            <span class="lvl">0</span>
+          </div>
+          <div id="terror" class="r3 c3">
+            <span class="lvl">0</span>
+          </div>
+          <div id="confuse" class="r4 c1">
+            <span class="lvl">0</span>
+          </div>
+          <div id="lifeTap" class="r4 c2">
+            <span class="lvl">0</span>
+          </div>
+          <div id="attract" class="r5 c1">
+            <span class="lvl">0</span>
+          </div>
+          <div id="decrepify" class="r5 c3">
+            <span class="lvl">0</span>
+          </div>
+          <div id="lowerResist" class="r6 c2">
+            <span class="lvl">0</span>
+          </div>
+        </div>
+        <div class="counter-wrapper">
+          <div class="remaining-skills">
+            <span class="rem">0</span> Skills Remaining
+          </div>
+          <div class="required-level">
+            <span class="lvl">0</span> Required Level
+          </div>
+        </div>
+        <div class="reset-wrapper">
+          <div class="btn reset">Reset Skills</div>
+        </div>
+      </div>
 
-			<div id="sor" class="tree sor">
-				<div id="cold" class="tab first">
-					<div id="iceBolt" class="r1 c2">
-						<span class="lvl">0</span>
-					</div>
-					<div id="frozenArmor" class="r1 c3">
-						<span class="lvl">0</span>
-					</div>
-					<div id="frostNova" class="r2 c1">
-						<span class="lvl">0</span>
-					</div>
-					<div id="iceBlast" class="r2 c2">
-						<span class="lvl">0</span>
-					</div>
-					<div id="shiverArmor" class="r3 c3">
-						<span class="lvl">0</span>
-					</div>
-					<div id="glacialSpike" class="r4 c2">
-						<span class="lvl">0</span>
-					</div>
-					<div id="blizzard" class="r5 c1">
-						<span class="lvl">0</span>
-					</div>
-					<div id="chillingArmor" class="r5 c3">
-						<span class="lvl">0</span>
-					</div>
-					<div id="frozenOrb" class="r6 c1">
-						<span class="lvl">0</span>
-					</div>
-					<div id="coldMastery" class="r6 c2">
-						<span class="lvl">0</span>
-					</div>
-				</div>
-				<div id="lite" class="tab second">
-					<div id="chargedBolt" class="r1 c2">
-						<span class="lvl">0</span>
-					</div>
-					<div id="staticField" class="r2 c1">
-						<span class="lvl">0</span>
-					</div>
-					<div id="telekinesis" class="r2 c3">
-						<span class="lvl">0</span>
-					</div>
-					<div id="nova" class="r3 c1">
-						<span class="lvl">0</span>
-					</div>
-					<div id="lightning" class="r3 c2">
-						<span class="lvl">0</span>
-					</div>
-					<div id="chainLightning" class="r4 c2">
-						<span class="lvl">0</span>
-					</div>
-					<div id="teleport" class="r4 c3">
-						<span class="lvl">0</span>
-					</div>
-					<div id="thunderStorm" class="r5 c1">
-						<span class="lvl">0</span>
-					</div>
-					<div id="energyShield" class="r5 c3">
-						<span class="lvl">0</span>
-					</div>
-					<div id="lightningMastery" class="r6 c2">
-						<span class="lvl">0</span>
-					</div>
-				</div>
-				<div id="fire" class="tab third">
-					<div id="fireBolt" class="r1 c2">
-						<span class="lvl">0</span>
-					</div>
-					<div id="warmth" class="r1 c3">
-						<span class="lvl">0</span>
-					</div>
-					<div id="inferno" class="r2 c1">
-						<span class="lvl">0</span>
-					</div>
-					<div id="blaze" class="r3 c1">
-						<span class="lvl">0</span>
-					</div>
-					<div id="fireBall" class="r3 c2">
-						<span class="lvl">0</span>
-					</div>
-					<div id="fireWall" class="r4 c1">
-						<span class="lvl">0</span>
-					</div>
-					<div id="enchant" class="r4 c3">
-						<span class="lvl">0</span>
-					</div>
-					<div id="meteor" class="r5 c2">
-						<span class="lvl">0</span>
-					</div>
-					<div id="fireMastery" class="r6 c2">
-						<span class="lvl">0</span>
-					</div>
-					<div id="hydra" class="r6 c3">
-						<span class="lvl">0</span>
-					</div>
-				</div>
-				<div class="counter-wrapper">
-					<div class="remaining-skills">
-						<span class="rem">0</span> Skills Remaining
-					</div>
-					<div class="required-level">
-						<span class="lvl">0</span> Required Level
-					</div>
-				</div>
-				<div class="reset-wrapper">
-					<div class="btn reset">Reset Skills</div>
-				</div>
-			</div>
-		</div>
-	</div>
+      <div id="sor" class="tree sor">
+        <div id="cold" class="tab first">
+          <div id="iceBolt" class="r1 c2">
+            <span class="lvl">0</span>
+          </div>
+          <div id="frozenArmor" class="r1 c3">
+            <span class="lvl">0</span>
+          </div>
+          <div id="frostNova" class="r2 c1">
+            <span class="lvl">0</span>
+          </div>
+          <div id="iceBlast" class="r2 c2">
+            <span class="lvl">0</span>
+          </div>
+          <div id="shiverArmor" class="r3 c3">
+            <span class="lvl">0</span>
+          </div>
+          <div id="glacialSpike" class="r4 c2">
+            <span class="lvl">0</span>
+          </div>
+          <div id="blizzard" class="r5 c1">
+            <span class="lvl">0</span>
+          </div>
+          <div id="chillingArmor" class="r5 c3">
+            <span class="lvl">0</span>
+          </div>
+          <div id="frozenOrb" class="r6 c1">
+            <span class="lvl">0</span>
+          </div>
+          <div id="coldMastery" class="r6 c2">
+            <span class="lvl">0</span>
+          </div>
+        </div>
+        <div id="lite" class="tab second">
+          <div id="chargedBolt" class="r1 c2">
+            <span class="lvl">0</span>
+          </div>
+          <div id="staticField" class="r2 c1">
+            <span class="lvl">0</span>
+          </div>
+          <div id="telekinesis" class="r2 c3">
+            <span class="lvl">0</span>
+          </div>
+          <div id="nova" class="r3 c1">
+            <span class="lvl">0</span>
+          </div>
+          <div id="lightning" class="r3 c2">
+            <span class="lvl">0</span>
+          </div>
+          <div id="chainLightning" class="r4 c2">
+            <span class="lvl">0</span>
+          </div>
+          <div id="teleport" class="r4 c3">
+            <span class="lvl">0</span>
+          </div>
+          <div id="thunderStorm" class="r5 c1">
+            <span class="lvl">0</span>
+          </div>
+          <div id="energyShield" class="r5 c3">
+            <span class="lvl">0</span>
+          </div>
+          <div id="lightningMastery" class="r6 c2">
+            <span class="lvl">0</span>
+          </div>
+        </div>
+        <div id="fire" class="tab third">
+          <div id="fireBolt" class="r1 c2">
+            <span class="lvl">0</span>
+          </div>
+          <div id="warmth" class="r1 c3">
+            <span class="lvl">0</span>
+          </div>
+          <div id="inferno" class="r2 c1">
+            <span class="lvl">0</span>
+          </div>
+          <div id="blaze" class="r3 c1">
+            <span class="lvl">0</span>
+          </div>
+          <div id="fireBall" class="r3 c2">
+            <span class="lvl">0</span>
+          </div>
+          <div id="fireWall" class="r4 c1">
+            <span class="lvl">0</span>
+          </div>
+          <div id="enchant" class="r4 c3">
+            <span class="lvl">0</span>
+          </div>
+          <div id="meteor" class="r5 c2">
+            <span class="lvl">0</span>
+          </div>
+          <div id="fireMastery" class="r6 c2">
+            <span class="lvl">0</span>
+          </div>
+          <div id="hydra" class="r6 c3">
+            <span class="lvl">0</span>
+          </div>
+        </div>
+        <div class="counter-wrapper">
+          <div class="remaining-skills">
+            <span class="rem">0</span> Skills Remaining
+          </div>
+          <div class="required-level">
+            <span class="lvl">0</span> Required Level
+          </div>
+        </div>
+        <div class="reset-wrapper">
+          <div class="btn reset">Reset Skills</div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-	<div id="about" class="section">
-		<h2>About</h2>
-		<div class"content-wrapper">
-			<p>Blah blah blah</p>
-		</div>
-	</div>
+  <div id="about" class="section">
+    <h2>About</h2>
 
-	<div id="wip" class="section">
-		<h2>Work in Progress</h2>
-		<div class="content-wrapper">
-			<p>This projet aims to recreate <a target="_blank" href="http://us.battle.net/wow/en/character/area-52/Veksen/advanced">WoW Armory</a> or <a target="_blank" href="http://us.battle.net/d3/en/profile/veksen-1565/hero/130806">Diablo 3 character profiles</a> for Diablo 2. My main inspirations are <a target="_blank" href="http://d3up.com/">D3up</a>, <a target="_blank" href="http://rubensayshi.github.io/d3-ehp-calculator/#intro">D3 EHP Calculator</a>, as well as various WoW and D3 spreadsheets I came across in the past years. I'd like to particulary thank Aaron Cox, the developer behind D3up. He helped me immensely by responding to various questions by email. If you play Diablo 3 and like optimizing your characters, definitly check out D3up, it might replace your favorite spreadsheet/tool.<p>
-			<div class="img-wrapper">
-				<img src="img/sample.png" alt="">
-				<div class="caption">Caption</div>
-			</div>
-			<div class="img-wrapper">
-				<img src="img/sample.png" alt="">
-				<div class="caption">Caption</div>
-			</div>
-		</div>
-	</div>
+    <div class="content-wrapper">
+      <p>Blah blah blah</p>
+    </div>
+  </div>
+
+  <div id="wip" class="section">
+    <h2>Work in Progress</h2>
+
+    <div class="content-wrapper">
+      <p>This projet aims to recreate
+        <a target="_blank" href="http://us.battle.net/wow/en/character/area-52/Veksen/advanced">WoW Armory</a> or
+        <a target="_blank" href="http://us.battle.net/d3/en/profile/veksen-1565/hero/130806">Diablo 3 character
+          profiles</a> for Diablo 2. My main inspirations are <a target="_blank" href="http://d3up.com/">D3up</a>,
+        <a target="_blank" href="http://rubensayshi.github.io/d3-ehp-calculator/#intro">D3 EHP Calculator</a>, as well
+        as various WoW and D3 spreadsheets I came across in the past years. I'd like to particulary thank Aaron Cox, the
+        developer behind D3up. He helped me immensely by responding to various questions by email. If you play Diablo 3
+        and like optimizing your characters, definitly check out D3up, it might replace your favorite spreadsheet/tool.
+
+      <p>
+
+      <div class="img-wrapper">
+        <img src="img/sample.png" alt="">
+
+        <div class="caption">Caption</div>
+      </div>
+      <div class="img-wrapper">
+        <img src="img/sample.png" alt="">
+
+        <div class="caption">Caption</div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> -->
@@ -830,23 +844,30 @@
 <script src="js/script.js"></script>
 <script src="js/jquery.history.js"></script>
 <script>
-(function(window,undefined){
+  (function (window, undefined) {
 
-	// Bind to StateChange Event
-	History.Adapter.bind(window,'statechange',function(){ // Note: We are using statechange instead of popstate
-		var State = History.getState(); // Note: We are using History.getState() instead of event.state
-	});
+    // Bind to StateChange Event
+    History.Adapter.bind(window, 'statechange', function () { // Note: We are using statechange instead of popstate
+      var State = History.getState(); // Note: We are using History.getState() instead of event.state
+    });
 
-})(window);
+  })(window);
 </script>
 <script>
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  (function (i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r;
+    i[r] = i[r] || function () {
+          (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+    a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m)
+  })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-	ga('create', 'UA-41578076-1', 'd2armory.net');
-	ga('send', 'pageview');
+  ga('create', 'UA-41578076-1', 'd2armory.net');
+  ga('send', 'pageview');
 </script>
 </body>
 </html>
