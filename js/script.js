@@ -279,21 +279,15 @@ function generateTooltip(e, elem) {
 
     var html = '<div class="tooltip">'
 
-    // console.log(data);
-
     if (data.desc) {
         var desc = data.desc;
-        // html += desc;
     }
     if (data.hasOwnProperty('prop')) {
         var props = data['prop'];
-        console.log(props);
 
         for (var prop in props) {
             var _prop = props[prop];
             var _propval = props[prop][base];
-            console.log(base);
-            console.log(props[prop]);
             if (_prop.hasOwnProperty('formula')) {
                 // console.log(_prop.formula);
             }
@@ -311,7 +305,6 @@ function destroyTooltip() {
 }
 
 $(function () {
-    // $('.tree .tab > div').on('mouseover', generateTooltip);
     $('.tree .tab > div').on('mouseover', generateTooltip);
     $('.tree .tab > div').on('mouseout', destroyTooltip);
     $('.tree > .tab').bind("contextmenu", function (e) {
@@ -346,10 +339,6 @@ $(function () {
             else {
                 var op = 1;
             }
-            console.log(checkPreReqOf($skill, $tab));
-            console.log(skill[$tab][$skill]['base']);
-            console.log(basemin + op + 1);
-            console.log(skill[$tab][$skill]['base'] > basemin);
             if ((checkPreReqOf($skill, $tab) || skill[$tab][$skill]['base'] > basemin + op) &&
                 skill[$tab][$skill]['base'] > basemin) {
                 skill[$tab][$skill]['base'] -= op;
