@@ -67,21 +67,21 @@ function checkPreReqOf(e, tab)
 }
 function updateRemaining(elem, operation)
 {
-	rem = elem.closest('.tab').siblings('.counter-wrapper').find('.rem');
-	current = rem.text();
+	var rem = elem.closest('.tab').siblings('.counter-wrapper').find('.rem');
+	var current = rem.text();
 	rem.text(parseInt(current)+operation);
 }
 function updateLevelRequired(elem, operation)
 {
-	req = elem.closest('.tab').siblings('.counter-wrapper').find('.lvl');
-	current = req.text();
+	var req = elem.closest('.tab').siblings('.counter-wrapper').find('.lvl');
+	var current = req.text();
 	req.text(parseInt(current)+operation);
 }
 function hasRemaining(elem, op)
 {
-	rem = elem.closest('.tab').siblings('.counter-wrapper').find('.rem');
-	current = rem.text();
-	result = parseInt(current)+parseInt(op);
+	var rem = elem.closest('.tab').siblings('.counter-wrapper').find('.rem');
+	var current = rem.text();
+	var result = parseInt(current)+parseInt(op);
 	if(result > 1) {
 		return true;
 	}
@@ -91,8 +91,9 @@ function hasRemaining(elem, op)
 }
 function getLvlReq(elem)
 {
-	classes = elem.attr('class');
-	row = classes.split(' ').splice(0,1).join();
+	var classes = elem.attr('class');
+	var row = classes.split(' ').splice(0,1).join();
+    var req;
 	switch(row)
 	{
 		case 'r1': req = 1; break;
@@ -122,7 +123,7 @@ function countLvl(c)
 function switchTab(c)
 {
 	if(c.type == 'click') {
-		$this = $(this);
+		var $this = $(this);
 		c = $this.attr('data-class');
 	}
 	else {
@@ -138,9 +139,9 @@ function buildState(c)
 	var tab = 0;
 	$('#'+c+' .tab').each(function(tab) {
 		var tree_str = '';
-		for(i = 1; i <= 10; i++)
+		for(var i = 1; i <= 10; i++)
 		{
-			val = $(this).data('skill'+zeroPad(i, 2));
+			var val = $(this).data('skill'+zeroPad(i, 2));
 			tree_str += (!val ? zeroPad(0, 2) : val);
 		}
 		tree[tab] = tree_str;
@@ -187,7 +188,7 @@ function applyState()
 			var curtab = $("#"+state['c']).find('.tab').eq(i-1).attr('id');
 
 			var tree = state['t'+i];
-			split_tree = tree.match(/.{1,2}/g);
+			var split_tree = tree.match(/.{1,2}/g);
 
 			$tree = $("#"+state['c']).find('.tab').eq(i-1);
 
@@ -209,7 +210,7 @@ function applyState()
 
 function setState(c)
 {
-	state = buildState(c);
+	var state = buildState(c);
 
 	History.replaceState(
 		{ state:state },
@@ -238,10 +239,10 @@ function zeroPad(num, places) {
 
 function onSkillUpdate(elem, val)
 {
-	$this = $(elem);
-	$tab = $this.closest('.tab');
-	$tree = $this.closest('.tree');
-	i = $this.index()+1;
+	var $this = $(elem);
+	var $tab = $this.closest('.tab');
+	var $tree = $this.closest('.tree');
+	var i = $this.index()+1;
 	$tab.data('skill'+zeroPad(i, 2), zeroPad(val, 2));
 
 	setState($tree.attr('id'));
@@ -250,17 +251,17 @@ function onSkillUpdate(elem, val)
 
 function resetSkills()
 {
-	$this = $(this);
+	var $this = $(this);
 	$this.closest('.tree').find('.lvl').text('0');
 
-	c = getState().c;
+	var c = getState().c;
 	buildState(c);
 	applyState();
 }
 
 function generateTooltip(e, elem)
 {
-	$this = $(this);
+	var $this = $(this);
 
 	var _skill = $this.attr('id');
 	var tab = $this.closest('.tab').attr('id');
@@ -282,9 +283,9 @@ function generateTooltip(e, elem)
 		var props = data['prop'];
 		console.log(props);
 
-		for(prop in props) {
-			_prop = props[prop];
-			_propval = props[prop][base];
+		for(var prop in props) {
+			var _prop = props[prop];
+			var _propval = props[prop][base];
 			console.log(base);
 			console.log(props[prop]);
 			if(_prop.hasOwnProperty('formula')) {
@@ -319,11 +320,11 @@ $(function () {
 		if (e.which == 1) {
 			//leftclick
 			if (e.shiftKey) {
-				remskills = $this.closest('.tree').find('.remaining-skills .rem').text();
+				var remskills = $this.closest('.tree').find('.remaining-skills .rem').text();
 				op = Math.min(remskills, basemax-skill[$tab][$skill]['base']);
 			}
 			else {
-				op = 1;
+				var op = 1;
 			}
 			if (skill[$tab][$skill]['base'] < basemax && checkPreReq($skill, $tab) && hasRemaining($this, op)) {
 				if(getLvlReq($this) > charlvl) return false;
@@ -335,10 +336,10 @@ $(function () {
 		} else if (e.which == 3) {
 			//rightclick
 			if(e.shiftKey) {
-				op = skill[$tab][$skill]['base'];
+				var op = skill[$tab][$skill]['base'];
 			}
 			else {
-				op = 1;
+				var op = 1;
 			}
 			console.log(checkPreReqOf($skill, $tab));
 			console.log(skill[$tab][$skill]['base']);
