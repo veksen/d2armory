@@ -1475,7 +1475,7 @@ var vm = new Vue({
 
   watch: {
     'classes': {
-      handler: function() {
+      handler: function () {
         return this.remainingSkills(this.classes)
       },
       deep: true
@@ -1483,27 +1483,27 @@ var vm = new Vue({
   },
 
   methods: {
-    switchClass: function(_class) {
+    switchClass: function (_class) {
       this.activeClass = _class.short;
     },
 
-    incrementSkill: function(skill) {
-      if(skill.base < this.config.baseMax
-      && vm.checkPreReq(skill)) {
+    incrementSkill: function (skill) {
+      if (skill.base < this.config.baseMax
+        && vm.checkPreReq(skill)) {
         skill.base++;
       }
     },
 
-    decrementSkill: function(skill) {
-      if(skill.base > this.config.baseMin
-      && vm.checkPreReqOf(skill)) {
+    decrementSkill: function (skill) {
+      if (skill.base > this.config.baseMin
+        && vm.checkPreReqOf(skill)) {
         skill.base--;
       }
     },
 
-    resetSkills: function(_class) {
-      for(var tab in _class.skills) {
-        for(var skill in _class.skills[tab]) {
+    resetSkills: function (_class) {
+      for (var tab in _class.skills) {
+        for (var skill in _class.skills[tab]) {
           _class.skills[tab][skill].base = 0;
         }
       }
@@ -1514,10 +1514,10 @@ var vm = new Vue({
       //});
     },
 
-    totalSkills: function(_class) {
+    totalSkills: function (_class) {
       var count = 0;
-      for(var tab in _class.skills) {
-        for(var skill in _class.skills[tab]) {
+      for (var tab in _class.skills) {
+        for (var skill in _class.skills[tab]) {
           count += _class.skills[tab][skill].base;
         }
       }
@@ -1530,17 +1530,17 @@ var vm = new Vue({
       return count;
     },
 
-    remainingSkills: function(classes) {
-      classes.forEach(function(_class) {
+    remainingSkills: function (classes) {
+      classes.forEach(function (_class) {
         _class.remainingSkills = vm.config.charLevel + vm.config.skillQuests - 1 - vm.totalSkills(_class);
       });
     },
 
     findSkillByKey: function (key) {
       for (var _class in this.classes) {
-        for(var tab in this.classes[_class].skills) {
-          for(var skill in this.classes[_class].skills[tab]) {
-            if(skill == key) {
+        for (var tab in this.classes[_class].skills) {
+          for (var skill in this.classes[_class].skills[tab]) {
+            if (skill == key) {
               return this.classes[_class].skills[tab][skill];
             }
           }
