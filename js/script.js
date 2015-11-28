@@ -9,8 +9,8 @@ var vm = new Vue({
       baseMin: 0,
       baseMax: 20
     },
-    classes: [
-      {
+    classes: {
+      zon: {
         short: 'zon',
         long: 'Amazon',
         remainingSkills: 0,
@@ -247,7 +247,7 @@ var vm = new Vue({
           }
         }
       },
-      {
+      sin: {
         short: 'sin',
         long: 'Assassin',
         remainingSkills: 0,
@@ -455,7 +455,7 @@ var vm = new Vue({
           }
         }
       },
-      {
+      bar: {
         short: 'bar',
         long: 'Barbarian',
         remainingSkills: 0,
@@ -652,7 +652,7 @@ var vm = new Vue({
           }
         }
       },
-      {
+      dru: {
         short: 'dru',
         long: 'Druid',
         remainingSkills: 0,
@@ -860,7 +860,7 @@ var vm = new Vue({
           }
         }
       },
-      {
+      pal: {
         short: 'pal',
         long: 'Paladin',
         remainingSkills: 0,
@@ -1061,7 +1061,7 @@ var vm = new Vue({
           }
         }
       },
-      {
+      nec: {
         short: 'nec',
         long: 'Necromancer',
         remainingSkills: 0,
@@ -1268,7 +1268,7 @@ var vm = new Vue({
           }
         }
       },
-      {
+      sor: {
         short: 'sor',
         long: 'Sorceress',
         remainingSkills: 0,
@@ -1470,13 +1470,13 @@ var vm = new Vue({
           }
         }
       }
-    ]
+    }
   },
 
   watch: {
     'classes': {
       handler: function () {
-        return this.remainingSkills(this.classes)
+        return this.remainingSkills(this.classes);
       },
       deep: true
     }
@@ -1531,9 +1531,9 @@ var vm = new Vue({
     },
 
     remainingSkills: function (classes) {
-      classes.forEach(function (_class) {
-        _class.remainingSkills = vm.config.charLevel + vm.config.skillQuests - 1 - vm.totalSkills(_class);
-      });
+      for (var _class in classes) {
+        classes[_class].remainingSkills = vm.config.charLevel + vm.config.skillQuests - 1 - vm.totalSkills(classes[_class]);
+      }
     },
 
     findSkillByKey: function (key) {
@@ -1579,7 +1579,7 @@ var vm = new Vue({
       }
       // passed all requirements
       return true;
-    }
+    },
 
   }
 });
