@@ -1500,12 +1500,16 @@ var vm = new Vue({
     },
 
     resetSkills: function(_class) {
-      console.log(_class.skills);
-      _class.skills.forEach(function(tab) {
-        tab.forEach(function(skill) {
-          skill.base = 0;
-        });
-      });
+      for(var tab in _class.skills) {
+        for(var skill in _class.skills[tab]) {
+          _class.skills[tab][skill].base = 0;
+        }
+      }
+      //_class.skills.forEach(function(tab) {
+      //  tab.forEach(function(skill) {
+      //    skill.base = 0;
+      //  });
+      //});
     },
 
     totalSkills: function(_class) {
