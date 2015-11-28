@@ -1495,7 +1495,8 @@ var vm = new Vue({
     },
 
     decrementSkill: function(skill) {
-      if(skill.base > this.config.baseMin) {
+      if(skill.base > this.config.baseMin
+      && vm.checkPreReqOf(skill)) {
         skill.base--;
       }
     },
@@ -1556,6 +1557,22 @@ var vm = new Vue({
       for (var i = 0; i < preReqs.length; i++) {
         var preReq = vm.findSkillByKey(preReqs[i]);
         if (preReq.base <= 0) {
+          // failed at least this preReq
+          return false;
+        }
+      }
+      // passed all requirements
+      return true;
+    },
+
+    checkPreReqOf: function (skill) {
+      var preReqOf = skill.preReqOf;
+      if (!preReqOf) {
+        return true;
+      }
+      for (var i = 0; i < preReqOf.length; i++) {
+        var preReqOf = vm.findSkillByKey(preReqOf[i]);
+        if (preReqOf.base > 0) {
           // failed at least this preReq
           return false;
         }
