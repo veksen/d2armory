@@ -1488,7 +1488,8 @@ var vm = new Vue({
     },
 
     incrementSkill: function(skill) {
-      if(skill.base < this.config.baseMax) {
+      if(skill.base < this.config.baseMax
+      && vm.checkPreReq(skill)) {
         skill.base++;
       }
     },
@@ -1532,6 +1533,36 @@ var vm = new Vue({
       classes.forEach(function(_class) {
         _class.remainingSkills = vm.config.charLevel + vm.config.skillQuests - 1 - vm.totalSkills(_class);
       });
+    },
+
+    findSkillByKey: function (key) {
+      for (var _class in this.classes) {
+        for(var tab in this.classes[_class].skills) {
+          for(var skill in this.classes[_class].skills[tab]) {
+            if(skill == key) {
+              return this.classes[_class].skills[tab][skill];
+            }
+          }
+        }
+      }
+    },
+
+    // TODO: this should probably be named differently
+    checkPreReq: function (skill) {
+      var preReqs = skill.preReqs;
+      if (!preReqs) {
+        return true;
+      }
+      for (var i = 0; i < preReqs.length; i++) {
+        var preReq = vm.findSkillByKey(preReqs[i]);
+        if (preReq.base <= 0) {
+          // failed at least this preReq
+          return false;
+        }
+      }
+      // passed all requirements
+      return true;
     }
+
   }
 });
