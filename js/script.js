@@ -1567,7 +1567,7 @@ var vm = new Vue({
 
     checkPreReqOf: function (skill) {
       var preReqOf = skill.preReqOf;
-      if (!preReqOf) {
+      if (!preReqOf || skill.base - 1 > this.config.baseMin) {
         return true;
       }
       for (var i = 0; i < preReqOf.length; i++) {
