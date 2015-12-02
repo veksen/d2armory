@@ -5,7 +5,7 @@ var gulp = require('gulp'),
   runseq = require('gulp-sequence');
 
 gulp.task('js', function (done) {
-  runseq(['clean-js', 'process-js'], function () {
+  runseq(['lint-js', 'clean-js', 'process-js'], function () {
     done();
   });
 });
