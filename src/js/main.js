@@ -35,15 +35,15 @@ var vm = new Vue({
     },
 
     incrementSkill: function (skill) {
-      if (skill.base < this.config.baseMax
-        && vm.checkPreReq(skill)) {
+      if (skill.base < this.config.baseMax &&
+          vm.checkPreReq(skill)) {
         skill.base++;
       }
     },
 
     decrementSkill: function (skill) {
-      if (skill.base > this.config.baseMin
-        && vm.checkPreReqOf(skill)) {
+      if (skill.base > this.config.baseMin &&
+          vm.checkPreReqOf(skill)) {
         skill.base--;
       }
     },
@@ -54,11 +54,11 @@ var vm = new Vue({
           _class.skills[tab][skill].base = 0;
         }
       }
-      //_class.skills.forEach(function(tab) {
-      //  tab.forEach(function(skill) {
-      //    skill.base = 0;
-      //  });
-      //});
+      // _class.skills.forEach(function(tab) {
+      //   tab.forEach(function(skill) {
+      //     skill.base = 0;
+      //   });
+      // });
     },
 
     totalSkills: function (_class) {
@@ -68,11 +68,11 @@ var vm = new Vue({
           count += _class.skills[tab][skill].base;
         }
       }
-      //_class.skills.forEach(function(tab) {
-      //  tab.forEach(function(skill) {
-      //    count += skill.base;
-      //  });
-      //});
+      // _class.skills.forEach(function(tab) {
+      //   tab.forEach(function(skill) {
+      //     count += skill.base;
+      //   });
+      // });
 
       return count;
     },
@@ -87,7 +87,7 @@ var vm = new Vue({
       for (var _class in this.classes) {
         for (var tab in this.classes[_class].skills) {
           for (var skill in this.classes[_class].skills[tab]) {
-            if (skill == key) {
+            if (skill === key) {
               return this.classes[_class].skills[tab][skill];
             }
           }
@@ -113,12 +113,12 @@ var vm = new Vue({
     },
 
     checkPreReqOf: function (skill) {
-      var preReqOf = skill.preReqOf;
-      if (!preReqOf || skill.base - 1 > this.config.baseMin) {
+      var preReqsOf = skill.preReqOf;
+      if (!preReqsOf || skill.base - 1 > this.config.baseMin) {
         return true;
       }
-      for (var i = 0; i < preReqOf.length; i++) {
-        var preReqOf = vm.findSkillByKey(preReqOf[i]);
+      for (var i = 0; i < preReqsOf.length; i++) {
+        var preReqOf = vm.findSkillByKey(preReqsOf[i]);
         if (preReqOf.base > 0) {
           // failed at least this preReq
           return false;
@@ -126,7 +126,7 @@ var vm = new Vue({
       }
       // passed all requirements
       return true;
-    },
+    }
 
   }
 });
