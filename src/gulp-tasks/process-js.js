@@ -1,7 +1,5 @@
 var gulp = require('gulp'),
   paths = require('../gulp-paths.js'),
-  path = require('path'),
-  gutil = require('gulp-util'),
   rename = require('gulp-rename'),
   // rev = require('gulp-rev'),
   concat = require('gulp-concat'),
