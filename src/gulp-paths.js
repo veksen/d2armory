@@ -1,6 +1,6 @@
-var path = require('path');
+var path = require('path'),
 
-var paths = {
+paths = {
   jsSrc:  './src/js',
   sass:   './src/scss',
   jsDst:  './public/assets/js',
@@ -9,6 +9,6 @@ var paths = {
   assets: './public/assets',
   bower:  './bower_components',
   base:   path.resolve(__dirname, '.')
-}
+};
 
 module.exports = paths;

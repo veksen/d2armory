@@ -1,8 +1,5 @@
 var gulp = require('gulp'),
   paths = require('../gulp-paths.js'),
-// plumber = require('gulp-plumber'),
-  concat = require('gulp-concat'),
-  notify = require('gulp-notify'),
   eslint = require('gulp-eslint'),
 
   filesToUse = [
@@ -17,3 +14,4 @@ gulp.task('lint-js', function () {
     .pipe(eslint.format());
     // .pipe(eslint.failOnError())
 });
+

@@ -1,7 +1,4 @@
-var path = require('path');
-
 var gulp = require('gulp'),
-  gutil = require('gulp-util'),
   req = require('require-dir'),
   paths = require('./src/gulp-paths.js');
 
