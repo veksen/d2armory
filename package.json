@@ -1,0 +1,34 @@
+{
+  "name": "d2armory",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "dependencies": {},
+  "devDependencies": {
+    "del": "^2.1.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-minify-css": "^1.2.2",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.1.0",
+    "gulp-sequence": "^0.4.1",
+    "gulp-size": "^2.0.0",
+    "gulp-uglify": "^1.5.1",
+    "require-dir": "^0.3.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/veksen/d2armory.git"
+  },
+  "author": "veksen",
+  "license": "GPL",
+  "bugs": {
+    "url": "https://github.com/veksen/d2armory/issues"
+  },
+  "homepage": "https://github.com/veksen/d2armory#readme"
+}
