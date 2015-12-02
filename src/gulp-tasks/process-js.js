@@ -10,6 +10,7 @@ var gulp = require('gulp'),
 
 var filesToUse = [
   paths.bower + '/vue/dist/vue.min.js',
+  paths.jsSrc + '/data/*',
   paths.jsSrc + '/main.js',
 ];
 
