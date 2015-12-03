@@ -1,0 +1,3 @@
+This projet aims to recreate <a target="_blank" href="http://us.battle.net/wow/en/character/area-52/Veksen/advanced">WoW Armory</a> or <a target="_blank" href="http://us.battle.net/d3/en/profile/veksen-1565/hero/66469367">Diablo 3 character profiles</a> for Diablo 2. My main inspirations are D3up (now defunct), <a target="_blank" href="http://rubensayshi.github.io/d3-ehp-calculator/#intro">D3 EHP Calculator</a> (no longer maintained), as well as various WoW and D3 spreadsheets I came across in the past years. 
+
+I'd like to particulary thank Aaron Cox, the developer behind D3up. He helped me immensely by responding to various questions by email.
