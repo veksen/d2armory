@@ -1,4 +1,13 @@
+.idea
 sftp-config.json
 sftp-config-alt.json
 *.sublime-project
 *.sublime-workspace
+
+/node_modules
+/bower_components
+
+/public/assets/css/main.min.css
+/public/assets/js/main.min.js
+
+/log

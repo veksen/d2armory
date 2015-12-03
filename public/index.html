@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Diablo 2 Skill Tree Planner</title>
+  <meta name="description" content="Skill tree planner for Diablo 2">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <link href="/assets/css/main.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div id="mainHead">
+  <h1>Diablo 2 Skill Tree Planner</h1>
+</div>
+<div id="mainContainer">
+
+  <div id="planner" class="section">
+    <div class="class-switcher">
+      <ul>
+        <li v-for="class in classes" data-class="{{ class.short }}" :class="{ 'active': activeClass == class.short }" @click="switchClass(class)">{{ class.long }}</li>
+      </ul>
+    </div>
+
+    <div class="trees-wrapper">
+      <div v-for="class in classes" v-if="activeClass == class.short"  id="{{ class.short }}" class="tree {{ class.short }}">
+        <div class="tabs">
+          <div v-for="(tabName, tab) in class.skills" class="tab" id="{{ tabName }}">
+            <div v-for="(skillName, skill) in tab" id="{{ skillName }}" class="r{{ skill.row }} c{{ skill.col }}" @click="incrementSkill(skill)" @contextmenu.prevent="decrementSkill(skill)">
+              <span class="lvl">{{ skill.base }}</span>
+            </div>
+          </div>
+        </div>
+        <div class="tabs-detail">
+          <div class="counter-wrapper">
+            <div class="remaining-skills">
+              <span class="rem">{{ class.remainingSkills }}</span> Skills Remaining
+            </div>
+            <div class="required-level">
+              <span class="lvl">0</span> Required Level
+            </div>
+          </div>
+          <div class="reset-wrapper">
+            <div class="btn reset" @click="resetSkills(class)">Reset Skills</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/assets/js/main.min.js"></script>
+<script>
+  window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+  ga('create', 'UA-41578076-1', 'd2armory.net');
+  ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+</body>
+</html>

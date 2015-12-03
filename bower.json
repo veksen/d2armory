@@ -1,0 +1,22 @@
+{
+  "name": "d2armory",
+  "description": "",
+  "main": "index.html",
+  "authors": [
+    "veksen"
+  ],
+  "license": "GPL",
+  "homepage": "https://github.com/veksen/d2armory",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "vue": "~1.0.10"
+  }
+}
